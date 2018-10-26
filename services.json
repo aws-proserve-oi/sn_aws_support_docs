@@ -1,0 +1,5462 @@
+{
+    "services": [
+        {
+            "code": "comprehend", 
+            "name": "Comprehend", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-relational-database-service-mariadb", 
+            "name": "Relational Database Service (MariaDB)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-acm-service", 
+            "name": "Certificate Manager", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "private-ca", 
+                    "name": "Private CA"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "domain-blacklisting", 
+                    "name": "Domain Blacklisting"
+                }, 
+                {
+                    "code": "domain-whitelisting", 
+                    "name": "Domain Whitelisting"
+                }, 
+                {
+                    "code": "certificate-revocation", 
+                    "name": "Certificate Revocation"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "validation-issue", 
+                    "name": "Validation Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-opsworks-chef-automate", 
+            "name": "OpsWorks for Chef Automate", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-cloudwatch", 
+            "name": "CloudWatch", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "alarms", 
+                    "name": "Alarms"
+                }, 
+                {
+                    "code": "custom-metrics", 
+                    "name": "Custom Metrics"
+                }, 
+                {
+                    "code": "event", 
+                    "name": "Events"
+                }, 
+                {
+                    "code": "logs", 
+                    "name": "Logs"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "dashboard", 
+                    "name": "Dashboard"
+                }
+            ]
+        }, 
+        {
+            "code": "service-macie", 
+            "name": "Macie", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "console-specific", 
+                    "name": "Console Specific"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "device-farm", 
+            "name": "Device Farm", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "plugins", 
+                    "name": "Plugins"
+                }, 
+                {
+                    "code": "service-issue", 
+                    "name": "Service Issue"
+                }, 
+                {
+                    "code": "api-sdk", 
+                    "name": "API/SDK"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "device-issue", 
+                    "name": "Device Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-relational-database-service-postgresql", 
+            "name": "Relational Database Service (PostgreSQL)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "billing", 
+            "name": "Billing", 
+            "categories": [
+                {
+                    "code": "update-payment-method", 
+                    "name": "Update Payment Method"
+                }, 
+                {
+                    "code": "marketplace-billing", 
+                    "name": "Marketplace"
+                }, 
+                {
+                    "code": "other-billing-questions", 
+                    "name": "Other Billing Questions"
+                }, 
+                {
+                    "code": "question", 
+                    "name": "Question About My Bill"
+                }, 
+                {
+                    "code": "invoices-and-reports", 
+                    "name": "Invoices and Reports"
+                }, 
+                {
+                    "code": "vat", 
+                    "name": "VAT"
+                }, 
+                {
+                    "code": "dispute-charge", 
+                    "name": "Dispute a Charge"
+                }, 
+                {
+                    "code": "payment-issue", 
+                    "name": "Payment Issue"
+                }, 
+                {
+                    "code": "free-tier", 
+                    "name": "Free Tier"
+                }, 
+                {
+                    "code": "credits-and-promotions", 
+                    "name": "Credits & Promotions"
+                }, 
+                {
+                    "code": "consolidated-billing", 
+                    "name": "Consolidated Billing"
+                }, 
+                {
+                    "code": "us-sales-tax", 
+                    "name": "US Sales Tax"
+                }, 
+                {
+                    "code": "charge-inquiry", 
+                    "name": "Charge Inquiry"
+                }, 
+                {
+                    "code": "reserved-instances", 
+                    "name": "Reserved Instances"
+                }, 
+                {
+                    "code": "devpay-inquiry", 
+                    "name": "DevPay Inquiry"
+                }, 
+                {
+                    "code": "update-billing-details", 
+                    "name": "Update Billing Details"
+                }, 
+                {
+                    "code": "account-reinstatement", 
+                    "name": "Account Reinstatement"
+                }, 
+                {
+                    "code": "us-sales-tax-exemption", 
+                    "name": "US Sales Tax Exemption"
+                }, 
+                {
+                    "code": "domain-name-registration-issue", 
+                    "name": "Domain name registration issue"
+                }, 
+                {
+                    "code": "qualify-as-educational-institution", 
+                    "name": "Qualify as Educational Institution"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-data-pipeline", 
+            "name": "Data Pipeline", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "pipeline-creation", 
+                    "name": "Pipeline Creation"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "stalled-pipeline", 
+                    "name": "Stalled Pipeline"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-import-export-snowball", 
+            "name": "Snowball", 
+            "categories": [
+                {
+                    "code": "s3-adapter", 
+                    "name": "S3 Adapter"
+                }, 
+                {
+                    "code": "job-inquiry", 
+                    "name": "Job Inquiry"
+                }, 
+                {
+                    "code": "shipping-status", 
+                    "name": "Shipping Status"
+                }, 
+                {
+                    "code": "manifest-unlock-codes", 
+                    "name": "Manifest and Unlock Codes"
+                }, 
+                {
+                    "code": "snowball-cli", 
+                    "name": "Snowball command line tool"
+                }, 
+                {
+                    "code": "data-inconsistency", 
+                    "name": "Data Inconsistency"
+                }, 
+                {
+                    "code": "snowball-edge-services", 
+                    "name": "Snowball Edge Services"
+                }, 
+                {
+                    "code": "feature-requests", 
+                    "name": "Feature Requests"
+                }, 
+                {
+                    "code": "slow-data-transfer", 
+                    "name": "Slow Data Transfer"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "snowball-device-issue", 
+                    "name": "Snowball device issue"
+                }, 
+                {
+                    "code": "connectivity-issue", 
+                    "name": "Connectivity Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "transcribe", 
+            "name": "Transcribe", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "api-sdk", 
+                    "name": "API/SDK"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-marketplace", 
+            "name": "Marketplace", 
+            "categories": [
+                {
+                    "code": "marketplace-buyer-request", 
+                    "name": "Marketplace Buyer Request"
+                }, 
+                {
+                    "code": "marketplace-seller-request", 
+                    "name": "Marketplace Seller Request"
+                }, 
+                {
+                    "code": "support-problems", 
+                    "name": "Product and Support Problems"
+                }, 
+                {
+                    "code": "general-marketplace-seller-inquiry", 
+                    "name": "General Marketplace Seller Inquiry"
+                }, 
+                {
+                    "code": "refund-request", 
+                    "name": "Refund Request"
+                }, 
+                {
+                    "code": "software-launch-issue", 
+                    "name": "Software Launch Issue"
+                }, 
+                {
+                    "code": "marketplace-website-issue", 
+                    "name": "Marketplace Website Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-greengrass", 
+            "name": "Greengrass", 
+            "categories": [
+                {
+                    "code": "machine-learning", 
+                    "name": "Machine Learning"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "certificates", 
+                    "name": "Certificates"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "greengrass-core", 
+                    "name": "Greengrass Core"
+                }, 
+                {
+                    "code": "device-sdk", 
+                    "name": "Device SDK"
+                }, 
+                {
+                    "code": "group-management-deployment", 
+                    "name": "Group Management/Deployment"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "api-sdk", 
+                    "name": "API/SDK"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "service-deeplens", 
+            "name": "DeepLens", 
+            "categories": [
+                {
+                    "code": "service-functionality", 
+                    "name": "Service Functionality"
+                }, 
+                {
+                    "code": "sdk-api-guidance", 
+                    "name": "SDK/API Guidance"
+                }, 
+                {
+                    "code": "documentation", 
+                    "name": "Documentation"
+                }, 
+                {
+                    "code": "configuration-guidance", 
+                    "name": "Configuration Guidance"
+                }, 
+                {
+                    "code": "sdk-bug", 
+                    "name": "SDK Bug"
+                }, 
+                {
+                    "code": "architectural-guidance-best-practices", 
+                    "name": "Architectural Guidance/Best Practices"
+                }
+            ]
+        }, 
+        {
+            "code": "mobile-analytics", 
+            "name": "Mobile Analytics ", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-virtual-private-cloud", 
+            "name": "Virtual Private Cloud (VPC)", 
+            "categories": [
+                {
+                    "code": "nat-gateway", 
+                    "name": "NAT Gateway"
+                }, 
+                {
+                    "code": "vpc-peering", 
+                    "name": "VPC Peering"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "vpn-solutions", 
+                    "name": "VPN Solutions"
+                }, 
+                {
+                    "code": "connection-issue", 
+                    "name": "Connection Issue"
+                }, 
+                {
+                    "code": "vpc-endpoints", 
+                    "name": "VPC Endpoints"
+                }, 
+                {
+                    "code": "dns-dhcp-issues", 
+                    "name": "DNS/DHCP Issues"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-appstream2", 
+            "name": "AppStream 2.0", 
+            "categories": [
+                {
+                    "code": "image-builder", 
+                    "name": "Image Builder"
+                }, 
+                {
+                    "code": "management-console-sdk", 
+                    "name": "Management Console and SDK"
+                }, 
+                {
+                    "code": "application-streaming-issue", 
+                    "name": "Application Streaming Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-artifact", 
+            "name": "Artifact", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "educate", 
+            "name": "Educate", 
+            "categories": [
+                {
+                    "code": "credit-inquiry", 
+                    "name": "Credit Inquiry"
+                }, 
+                {
+                    "code": "account-access-issues", 
+                    "name": "Account Access Issues"
+                }, 
+                {
+                    "code": "application-inquiry", 
+                    "name": "Application Inquiry"
+                }, 
+                {
+                    "code": "general-info", 
+                    "name": "General Educate Info"
+                }, 
+                {
+                    "code": "veteran-inquiry", 
+                    "name": "Veteran Inquiry"
+                }
+            ]
+        }, 
+        {
+            "code": "guardduty", 
+            "name": "GuardDuty", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "documentation", 
+                    "name": "Documentation"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "detection-alert-guidance", 
+                    "name": "Detection/Alert Guidance"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-opsworks", 
+            "name": "OpsWorks Stacks", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "resource-issues", 
+                    "name": "Resource Management Issues"
+                }, 
+                {
+                    "code": "deployment-issue", 
+                    "name": "Deployment Issue"
+                }, 
+                {
+                    "code": "instance-issues", 
+                    "name": "Instance Issues"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "agent-issues", 
+                    "name": "Agent Issues"
+                }, 
+                {
+                    "code": "cookbook-guidance", 
+                    "name": "Cookbook Guidance"
+                }, 
+                {
+                    "code": "layer-issues", 
+                    "name": "Layer Issues"
+                }, 
+                {
+                    "code": "console-issues", 
+                    "name": "UI/Console Issues"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "stack-issues", 
+                    "name": "Stack Issues"
+                }, 
+                {
+                    "code": "application-issue", 
+                    "name": "Application Issues"
+                }
+            ]
+        }, 
+        {
+            "code": "code-star", 
+            "name": "CodeStar", 
+            "categories": [
+                {
+                    "code": "console-issues", 
+                    "name": "Console Issues"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "sagemaker", 
+            "name": "SageMaker", 
+            "categories": [
+                {
+                    "code": "general-guidance-framework", 
+                    "name": "General Guidance, Framework"
+                }, 
+                {
+                    "code": "general-guidance-custom-algorithm", 
+                    "name": "General Guidance, Custom Algorithm"
+                }, 
+                {
+                    "code": "model-artifact-issue", 
+                    "name": "Model / Artifact Issue"
+                }, 
+                {
+                    "code": "notebook-issue", 
+                    "name": "Notebook Issue"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "performance-issue", 
+                    "name": "Performance Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance-hosted-algorithms", 
+                    "name": "General Guidance, Hosted Algorithms"
+                }, 
+                {
+                    "code": "job-issue", 
+                    "name": "Job Issue"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "distributed-denial-of-service", 
+            "name": "Distributed Denial of Service (DDoS)", 
+            "categories": [
+                {
+                    "code": "inbound-to-aws", 
+                    "name": "Inbound To AWS"
+                }, 
+                {
+                    "code": "report", 
+                    "name": "Report"
+                }, 
+                {
+                    "code": "abuse-complaint", 
+                    "name": "Abuse Complaint"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elasticache", 
+            "name": "ElastiCache", 
+            "categories": [
+                {
+                    "code": "memcached-issue", 
+                    "name": "MapR"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "performance-issue", 
+                    "name": "Performance Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "migration-hub", 
+            "name": "Migration Hub", 
+            "categories": [
+                {
+                    "code": "performance-issue", 
+                    "name": "Performance Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "documentation", 
+                    "name": "Documentation"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "console-specific", 
+                    "name": "Console Specific"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-relational-database-service-sql-server", 
+            "name": "Relational Database Service (SQL Server)", 
+            "categories": [
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "auto-scaling", 
+            "name": "Auto Scaling", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "ec2-spot-fleet-scaling", 
+                    "name": "EC2 Spot Fleet Scaling"
+                }, 
+                {
+                    "code": "command-line-tools", 
+                    "name": "Command Line Tools"
+                }, 
+                {
+                    "code": "scaling-policy-guidance", 
+                    "name": "Scaling Policy Guidance"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "service-workspaces-linux", 
+            "name": "WorkSpaces (Linux)", 
+            "categories": [
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "imaging", 
+                    "name": "Imaging"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "connection-issues", 
+                    "name": "Connection Issues "
+                }
+            ]
+        }, 
+        {
+            "code": "sentinel-service-request", 
+            "name": "AMS - Service Request", 
+            "categories": [
+                {
+                    "code": "service-reporting-query", 
+                    "name": "Service Reporting Query"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "security-related", 
+                    "name": "Security Related"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "service-access", 
+                    "name": "Access"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "mediatailor", 
+            "name": "MediaTailor", 
+            "categories": [
+                {
+                    "code": "permissions-and-access-control", 
+                    "name": "Permissions and Access Control"
+                }, 
+                {
+                    "code": "ad-server-issue", 
+                    "name": "Ad Server Issue"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "configuration", 
+                    "name": "Configuration"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "origin", 
+                    "name": "Origin"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "reporting", 
+                    "name": "Reporting"
+                }
+            ]
+        }, 
+        {
+            "code": "sentinel-provisioning-request", 
+            "name": "AMS - Provisioning Request", 
+            "categories": [
+                {
+                    "code": "new-landscape-request", 
+                    "name": "New Landscape Request"
+                }, 
+                {
+                    "code": "environment-retirement", 
+                    "name": "Environment Retirement"
+                }, 
+                {
+                    "code": "landscape-update-capacity-related", 
+                    "name": "Landscape Update - Capacity Related"
+                }, 
+                {
+                    "code": "landscape-update-other", 
+                    "name": "Landscape Update - Other"
+                }, 
+                {
+                    "code": "landscape-update-monitoring", 
+                    "name": "Landscape Update - Monitoring"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-lightsail", 
+            "name": "Lightsail", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "postgresql", 
+                    "name": "PostgreSQL"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "mysql", 
+                    "name": "MySQL"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "mediapackage", 
+            "name": "MediaPackage", 
+            "categories": [
+                {
+                    "code": "channel-output", 
+                    "name": "Channel Output"
+                }, 
+                {
+                    "code": "channel-input", 
+                    "name": "Channel Input"
+                }, 
+                {
+                    "code": "permissions-and-access-control", 
+                    "name": "Permissions and Access Control"
+                }, 
+                {
+                    "code": "channel-endpoint", 
+                    "name": "Channel/Endpoint"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "encryption-drm", 
+                    "name": "Encryption/DRM"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "service-catalog", 
+            "name": "Service Catalog", 
+            "categories": [
+                {
+                    "code": "deployment-issues", 
+                    "name": "Deployment Issues"
+                }, 
+                {
+                    "code": "permissions", 
+                    "name": "Permissions"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "user-assignments", 
+                    "name": "User Assignments"
+                }, 
+                {
+                    "code": "portfolios", 
+                    "name": "Portfolios"
+                }, 
+                {
+                    "code": "end-user-console", 
+                    "name": "End User Console"
+                }, 
+                {
+                    "code": "products", 
+                    "name": "Products"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-appstream", 
+            "name": "AppStream", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-glue", 
+            "name": "Glue", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-servermigration-windows", 
+            "name": "Server Migration Service (Windows)", 
+            "categories": [
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "sms-connector", 
+                    "name": "SMS Connector"
+                }, 
+                {
+                    "code": "replication-job", 
+                    "name": "Replication Job"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-cloud-hsm", 
+            "name": "CloudHSM", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "security-issue", 
+                    "name": "Security Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-batch", 
+            "name": "Batch", 
+            "categories": [
+                {
+                    "code": "api-issue", 
+                    "name": "API Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "compute-environment-container", 
+                    "name": "Compute Environment: Container"
+                }, 
+                {
+                    "code": "architectural-guidance", 
+                    "name": "Architectural Guidance"
+                }, 
+                {
+                    "code": "permissions-issue", 
+                    "name": "Permissions Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "systems-manager-for-microsoft-scvmm", 
+            "name": "Systems Manager for Microsoft SCVMM", 
+            "categories": [
+                {
+                    "code": "getting-started", 
+                    "name": "Getting Started"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "performance", 
+                    "name": "Performance"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-identity-and-access-management", 
+            "name": "Identity and Access Management (IAM) ", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "authentication-issue", 
+                    "name": "Authentication Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "alexa-services", 
+            "name": "Alexa Services", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-kinesis-firehose", 
+            "name": "Kinesis Firehose", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "client-library", 
+                    "name": "Client Library"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-cloudfront", 
+            "name": "CloudFront", 
+            "categories": [
+                {
+                    "code": "http-4xx-5xx-errors", 
+                    "name": "HTTP 4xx/5xx Errors"
+                }, 
+                {
+                    "code": "cors", 
+                    "name": "Cross-Origin Resource Sharing (CORS)"
+                }, 
+                {
+                    "code": "distribution-issue", 
+                    "name": "Distribution Issue"
+                }, 
+                {
+                    "code": "network-issue", 
+                    "name": "Network Issue"
+                }, 
+                {
+                    "code": "lambda-edge", 
+                    "name": "Lambda@Edge"
+                }, 
+                {
+                    "code": "acm", 
+                    "name": "ACM (Amazon Certificate Manager)"
+                }, 
+                {
+                    "code": "ssl-problems", 
+                    "name": "SSL Problems"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "private-content-issues", 
+                    "name": "Private Content Issues (Signed URLs/Cookies)"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "latency-slow-downloads", 
+                    "name": "Latency/Slow Downloads"
+                }, 
+                {
+                    "code": "waf", 
+                    "name": "WAF (Web Application Firewall)"
+                }, 
+                {
+                    "code": "caching-issues", 
+                    "name": "Caching Issues"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-codebuild", 
+            "name": "CodeBuild", 
+            "categories": [
+                {
+                    "code": "build-issues", 
+                    "name": "Build Issues"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-polly", 
+            "name": "Polly", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "service-limit-increase", 
+            "name": "Service Limit Increase", 
+            "categories": [
+                {
+                    "code": "ec2-credit-based-instances-launch-credits-limits", 
+                    "name": "EC2 Credit Based Instances Launch Credits"
+                }, 
+                {
+                    "code": "elasticsearch-limits", 
+                    "name": "Elasticsearch Service"
+                }, 
+                {
+                    "code": "api-gateway-limits", 
+                    "name": "API Gateway"
+                }, 
+                {
+                    "code": "service-code-eks", 
+                    "name": "EKS (Container Service for Kubernetes)"
+                }, 
+                {
+                    "code": "service-code-mediaconvert", 
+                    "name": "MediaConvert"
+                }, 
+                {
+                    "code": "import-export-snowball-limits", 
+                    "name": "Snowball"
+                }, 
+                {
+                    "code": "aws-batch", 
+                    "name": "Batch"
+                }, 
+                {
+                    "code": "aws-lambda-edge-limits", 
+                    "name": "Lambda@Edge"
+                }, 
+                {
+                    "code": "service-code-mediatailor", 
+                    "name": "MediaTailor"
+                }, 
+                {
+                    "code": "cloudfront-distributions", 
+                    "name": "CloudFront Distributions"
+                }, 
+                {
+                    "code": "service-code-translate", 
+                    "name": "Translate"
+                }, 
+                {
+                    "code": "codepipeline-limits", 
+                    "name": "CodePipeline"
+                }, 
+                {
+                    "code": "service-code-amazon-mq", 
+                    "name": "MQ"
+                }, 
+                {
+                    "code": "ebs-volumes", 
+                    "name": "EBS"
+                }, 
+                {
+                    "code": "ses-sending-quota", 
+                    "name": "SES Sending Limits"
+                }, 
+                {
+                    "code": "rds-instances", 
+                    "name": "RDS"
+                }, 
+                {
+                    "code": "data-pipeline-limit-increase", 
+                    "name": "Data Pipeline"
+                }, 
+                {
+                    "code": "service-code-machine-learning", 
+                    "name": "Machine Learning"
+                }, 
+                {
+                    "code": "ami-limits", 
+                    "name": "EC2 Images (AMIs)"
+                }, 
+                {
+                    "code": "service-code-alexa-for-business", 
+                    "name": "Alexa for Business"
+                }, 
+                {
+                    "code": "connect-limits", 
+                    "name": "Connect"
+                }, 
+                {
+                    "code": "elasticache-nodes", 
+                    "name": "ElastiCache Nodes"
+                }, 
+                {
+                    "code": "gamelift-limits", 
+                    "name": "GameLift"
+                }, 
+                {
+                    "code": "opsworks-chef-automate", 
+                    "name": "OpsWorks for Chef Automate"
+                }, 
+                {
+                    "code": "lightsail-limits", 
+                    "name": "Lightsail"
+                }, 
+                {
+                    "code": "service-code-ec2-systems-manager", 
+                    "name": "EC2 Systems Manager"
+                }, 
+                {
+                    "code": "service-code-kinesis-video-streams", 
+                    "name": "Kinesis Video Streams"
+                }, 
+                {
+                    "code": "sns-limits", 
+                    "name": "SNS"
+                }, 
+                {
+                    "code": "container-registry-limits", 
+                    "name": "Container Registry (ECR)"
+                }, 
+                {
+                    "code": "kinesis-firehose-limits", 
+                    "name": "Kinesis Firehose"
+                }, 
+                {
+                    "code": "service-code-sagemaker", 
+                    "name": "SageMaker"
+                }, 
+                {
+                    "code": "ec2-reserved-instance-seller", 
+                    "name": "EC2 Reserved Instance Sales"
+                }, 
+                {
+                    "code": "quicksight-limits", 
+                    "name": "QuickSight"
+                }, 
+                {
+                    "code": "polly-ip-address", 
+                    "name": "Polly IP Address"
+                }, 
+                {
+                    "code": "cloudsearch-partitions-and-instances", 
+                    "name": "CloudSearch Partitions and Instances"
+                }, 
+                {
+                    "code": "application-auto-scaling-limits", 
+                    "name": "Application Auto Scaling (Other than EC2 ASGs)"
+                }, 
+                {
+                    "code": "cloudformation-stacks", 
+                    "name": "CloudFormation Stacks"
+                }, 
+                {
+                    "code": "opsworks-for-puppet-enterprise", 
+                    "name": "OpsWorks for Puppet Enterprise"
+                }, 
+                {
+                    "code": "service-catalog-limits", 
+                    "name": "Service Catalog"
+                }, 
+                {
+                    "code": "elastic-ips", 
+                    "name": "Elastic IPs"
+                }, 
+                {
+                    "code": "workspaces-limits", 
+                    "name": "WorkSpaces"
+                }, 
+                {
+                    "code": "simpledb-domains", 
+                    "name": "SimpleDB Domains"
+                }, 
+                {
+                    "code": "simple-storage-service-limit", 
+                    "name": "Simple Storage Service (S3)"
+                }, 
+                {
+                    "code": "dax-limits", 
+                    "name": "Total DAX Nodes"
+                }, 
+                {
+                    "code": "ec2-dedicated-hosts-limits", 
+                    "name": "EC2 Dedicated Hosts"
+                }, 
+                {
+                    "code": "polly-account", 
+                    "name": "Polly Account"
+                }, 
+                {
+                    "code": "appstream2", 
+                    "name": "AppStream 2.0"
+                }, 
+                {
+                    "code": "service-code-medialive", 
+                    "name": "MediaLive"
+                }, 
+                {
+                    "code": "acm-limits", 
+                    "name": "Certificate Manager"
+                }, 
+                {
+                    "code": "ec2-reserved-purchase-instances", 
+                    "name": "EC2 Reserved Instance Purchase Instances"
+                }, 
+                {
+                    "code": "step-functions", 
+                    "name": "Step Functions"
+                }, 
+                {
+                    "code": "pinpoint-limits", 
+                    "name": "Pinpoint"
+                }, 
+                {
+                    "code": "athena-limits", 
+                    "name": "Athena"
+                }, 
+                {
+                    "code": "service-code-resource-groups", 
+                    "name": "Resource Groups"
+                }, 
+                {
+                    "code": "appstream-limits", 
+                    "name": "AppStream"
+                }, 
+                {
+                    "code": "workspaces-application-manager", 
+                    "name": "Workspaces Application Manager"
+                }, 
+                {
+                    "code": "swf-limits", 
+                    "name": "Simple Workflow Service (SWF)"
+                }, 
+                {
+                    "code": "config-service-limits", 
+                    "name": "Config Service"
+                }, 
+                {
+                    "code": "amazon-glacier", 
+                    "name": "Glacier"
+                }, 
+                {
+                    "code": "directory-service-limits", 
+                    "name": "Directory Service"
+                }, 
+                {
+                    "code": "dms-limits", 
+                    "name": "Database Migration Service"
+                }, 
+                {
+                    "code": "ec2-spot-instances", 
+                    "name": "EC2 Spot Instances"
+                }, 
+                {
+                    "code": "amazon-congnito-limits", 
+                    "name": "Cognito"
+                }, 
+                {
+                    "code": "service-code-iot", 
+                    "name": "IoT"
+                }, 
+                {
+                    "code": "polly-operation", 
+                    "name": "Polly Operation"
+                }, 
+                {
+                    "code": "route-53-limits", 
+                    "name": "Route 53"
+                }, 
+                {
+                    "code": "elastic-beanstalk-limits", 
+                    "name": "Elastic Beanstalk"
+                }, 
+                {
+                    "code": "cloudhsm-limits", 
+                    "name": "CloudHSM"
+                }, 
+                {
+                    "code": "cloudwatch-logs-limits", 
+                    "name": "CloudWatch Logs"
+                }, 
+                {
+                    "code": "opsworks-limits", 
+                    "name": "OpsWorks Stacks"
+                }, 
+                {
+                    "code": "cloudwatch-limits", 
+                    "name": "CloudWatch"
+                }, 
+                {
+                    "code": "service-code-glue", 
+                    "name": "Glue"
+                }, 
+                {
+                    "code": "ses-dedicated-ip", 
+                    "name": "SES Dedicated IP"
+                }, 
+                {
+                    "code": "service-code-mediapackage", 
+                    "name": "MediaPackage"
+                }, 
+                {
+                    "code": "aws-lambda-limits", 
+                    "name": "Lambda"
+                }, 
+                {
+                    "code": "iam-groups-and-users", 
+                    "name": "IAM Groups and Users"
+                }, 
+                {
+                    "code": "autoscaling-limits", 
+                    "name": "Auto Scaling"
+                }, 
+                {
+                    "code": "service-code-comprehend", 
+                    "name": "Comprehend"
+                }, 
+                {
+                    "code": "cloudwatch-events-limits", 
+                    "name": "CloudWatch Events"
+                }, 
+                {
+                    "code": "amazon-inspector-limits", 
+                    "name": "Inspector"
+                }, 
+                {
+                    "code": "shield-limits", 
+                    "name": "Resources Enabled for Shield Advanced Protection"
+                }, 
+                {
+                    "code": "service-code-elastic-gpu", 
+                    "name": "Elastic GPUs"
+                }, 
+                {
+                    "code": "service-code-sns-text-messaging", 
+                    "name": "SNS Text Messaging"
+                }, 
+                {
+                    "code": "ses-production-access", 
+                    "name": "SES Production Access"
+                }, 
+                {
+                    "code": "waf-limits", 
+                    "name": "WAF"
+                }, 
+                {
+                    "code": "application-discovery-limits", 
+                    "name": "Application Discovery"
+                }, 
+                {
+                    "code": "service-code-fargate", 
+                    "name": "Fargate"
+                }, 
+                {
+                    "code": "service-code-transcribe", 
+                    "name": "Transcribe"
+                }, 
+                {
+                    "code": "kinesis-limits", 
+                    "name": "Kinesis Streams"
+                }, 
+                {
+                    "code": "consolidated-billing-limits", 
+                    "name": "Consolidated Billing"
+                }, 
+                {
+                    "code": "service-code-mediastore", 
+                    "name": "MediaStore"
+                }, 
+                {
+                    "code": "certificate-manager-private-certificate-authority-ca", 
+                    "name": "Certificate Manager Private Certificate Authority (CA)"
+                }, 
+                {
+                    "code": "container-services-limit", 
+                    "name": "Container Services (ECS)"
+                }, 
+                {
+                    "code": "codedeploy-limits", 
+                    "name": "CodeDeploy"
+                }, 
+                {
+                    "code": "api-gateway-management", 
+                    "name": "API Gateway Management"
+                }, 
+                {
+                    "code": "service-code-pinpoint-email", 
+                    "name": "Pinpoint Email"
+                }, 
+                {
+                    "code": "aws-organizations", 
+                    "name": "Organizations"
+                }, 
+                {
+                    "code": "service-code-pinpoint-sms", 
+                    "name": "Pinpoint SMS"
+                }, 
+                {
+                    "code": "service-code-sqs", 
+                    "name": "Simple Queue Service (SQS)"
+                }, 
+                {
+                    "code": "redshift-limit-increases", 
+                    "name": "Redshift"
+                }, 
+                {
+                    "code": "elastic-load-balancers", 
+                    "name": "Elastic Load Balancers"
+                }, 
+                {
+                    "code": "dynamodb-limits", 
+                    "name": "DynamoDB"
+                }, 
+                {
+                    "code": "rekognition", 
+                    "name": "Rekognition"
+                }, 
+                {
+                    "code": "codebuild-limits", 
+                    "name": "CodeBuild"
+                }, 
+                {
+                    "code": "vpc-limits", 
+                    "name": "VPC"
+                }, 
+                {
+                    "code": "iot-analytics", 
+                    "name": "IoT Analytics"
+                }, 
+                {
+                    "code": "service-code-iot-device-management", 
+                    "name": "IoT Device Management"
+                }, 
+                {
+                    "code": "elastic-transcoder-limits", 
+                    "name": "Elastic Transcoder"
+                }, 
+                {
+                    "code": "elastic-file-system-limits", 
+                    "name": "Elastic File System (EFS)"
+                }, 
+                {
+                    "code": "direct-connect-limits", 
+                    "name": "Direct Connect"
+                }, 
+                {
+                    "code": "ec2-instances", 
+                    "name": "EC2 Instances"
+                }, 
+                {
+                    "code": "workmail-limits", 
+                    "name": "WorkMail"
+                }, 
+                {
+                    "code": "aws-key-management-service-limits", 
+                    "name": "Key Management Service"
+                }, 
+                {
+                    "code": "kinesis-analytics-limits", 
+                    "name": "Kinesis Analytics"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-simple-notification-service", 
+            "name": "Simple Notification Service (SNS)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "development", 
+                    "name": "Development"
+                }, 
+                {
+                    "code": "operational-networking", 
+                    "name": "Operational - Networking"
+                }, 
+                {
+                    "code": "notification-issue", 
+                    "name": "Notification Issue"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "operational-topic", 
+                    "name": "Operational - Topic Specific"
+                }, 
+                {
+                    "code": "operational-subscription", 
+                    "name": "Operational - Subscription Specific"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "freertos", 
+            "name": "FreeRTOS", 
+            "categories": [
+                {
+                    "code": "freertos-kernel", 
+                    "name": "FreeRTOS Kernel"
+                }, 
+                {
+                    "code": "freertos-device-libraries", 
+                    "name": "FreeRTOS Device Libraries"
+                }, 
+                {
+                    "code": "sdk-cli", 
+                    "name": "SDK/CLI"
+                }, 
+                {
+                    "code": "device-qualification", 
+                    "name": "Device Qualification"
+                }, 
+                {
+                    "code": "device-drivers-board-support-packages", 
+                    "name": "Device Drivers/Board Support Packages"
+                }, 
+                {
+                    "code": "feature-documentation-request", 
+                    "name": "Feature/Documentation Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "medialive", 
+            "name": "MediaLive", 
+            "categories": [
+                {
+                    "code": "cloudwatch-events", 
+                    "name": "CloudWatch Events"
+                }, 
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "permissions-and-access-control", 
+                    "name": "Permissions and Access Control"
+                }, 
+                {
+                    "code": "channel-in-degraded-state", 
+                    "name": "Channel in Recovering State"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "channel-validation", 
+                    "name": "Channel Validation"
+                }, 
+                {
+                    "code": "partial-output", 
+                    "name": "Partial Output"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "api-sdk", 
+                    "name": "API/SDK"
+                }, 
+                {
+                    "code": "unable-to-stop-start-delete-channel", 
+                    "name": "Unable to stop/start/delete Channel"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-shield", 
+            "name": "Shield", 
+            "categories": [
+                {
+                    "code": "inbound-attack-to-aws", 
+                    "name": "Inbound Attack to AWS"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "codedeploy", 
+            "name": "CodeDeploy", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "deployment-issue", 
+                    "name": "Deployment Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-simple-storage-service", 
+            "name": "Simple Storage Service (S3)", 
+            "categories": [
+                {
+                    "code": "object-issue", 
+                    "name": "Object Issue"
+                }, 
+                {
+                    "code": "network-issue", 
+                    "name": "Network Issue"
+                }, 
+                {
+                    "code": "static-website-hosting", 
+                    "name": "Static Website Hosting"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "bucket-issue", 
+                    "name": "Bucket Issue"
+                }, 
+                {
+                    "code": "analytics-and-metrics", 
+                    "name": "Analytics and Metrics"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "permissions", 
+                    "name": "Permissions and Access Control"
+                }, 
+                {
+                    "code": "s3-select", 
+                    "name": "S3 Select"
+                }, 
+                {
+                    "code": "notifications-and-logging", 
+                    "name": "Notifications and Logging"
+                }, 
+                {
+                    "code": "lifecycle-rules", 
+                    "name": "Consistency and Lifecycle Rules"
+                }, 
+                {
+                    "code": "transfer-acceleration-issue", 
+                    "name": "Transfer Acceleration Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-application-discovery-windows", 
+            "name": "Application Discovery Service (Windows)", 
+            "categories": [
+                {
+                    "code": "agentless-connector", 
+                    "name": "Issues: Agentless Connector"
+                }, 
+                {
+                    "code": "issues-agent", 
+                    "name": "Issues: Agent"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-health", 
+            "name": "Health", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "elastic-load-balancing", 
+            "name": "Elastic Load Balancing (ELB)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "load-balancer-issue", 
+                    "name": "Load Balancer Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-route53", 
+            "name": "Route 53", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "dns-issue", 
+                    "name": "DNS Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "domain-name-registration-issue", 
+                    "name": "Domain name registration issue"
+                }, 
+                {
+                    "code": "health-checks", 
+                    "name": "Health Checks"
+                }
+            ]
+        }, 
+        {
+            "code": "workmail", 
+            "name": "WorkMail", 
+            "categories": [
+                {
+                    "code": "web-app", 
+                    "name": "Web App"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "domain-and-user-administration", 
+                    "name": "Domain & User Administration"
+                }, 
+                {
+                    "code": "desktop-client", 
+                    "name": "Desktop Client"
+                }, 
+                {
+                    "code": "mobile", 
+                    "name": "Mobile"
+                }, 
+                {
+                    "code": "email-issue", 
+                    "name": "Email Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-lex", 
+            "name": "Lex", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "sdk-issue", 
+                    "name": "SDK Issue"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "documentation", 
+                    "name": "Documentation"
+                }, 
+                {
+                    "code": "command-line-tools", 
+                    "name": "Command Line Tools"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "lambda-integration", 
+                    "name": "Lambda Integration"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-application-discovery-linux", 
+            "name": "Application Discovery Service (Linux)", 
+            "categories": [
+                {
+                    "code": "issues-agent", 
+                    "name": "Issues: Agent"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "issues-agentless-connector", 
+                    "name": "Issues: Agentless Connector"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-relational-database-service-oracle", 
+            "name": "Relational Database Service (Oracle)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "connect", 
+            "name": "Connect (Contact Center)", 
+            "categories": [
+                {
+                    "code": "access-permissions", 
+                    "name": "Access and Permissions"
+                }, 
+                {
+                    "code": "phone-number-requests", 
+                    "name": "Phone Number Requests"
+                }, 
+                {
+                    "code": "contact-center-configuration", 
+                    "name": "Contact Center Configuration"
+                }, 
+                {
+                    "code": "country-whitelisting-outbound-calls", 
+                    "name": "Country Whitelisting for Outbound Calls"
+                }, 
+                {
+                    "code": "phone-number-porting", 
+                    "name": "Phone Number Porting"
+                }, 
+                {
+                    "code": "integration", 
+                    "name": "Integration"
+                }, 
+                {
+                    "code": "call-quality", 
+                    "name": "Call Quality"
+                }, 
+                {
+                    "code": "contact-handling-routing", 
+                    "name": "Contact Handling & Routing"
+                }, 
+                {
+                    "code": "feature-requests", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "contact-center-metrics", 
+                    "name": "Contact Center Metrics"
+                }
+            ]
+        }, 
+        {
+            "code": "systems-manager", 
+            "name": "Systems Manager", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "ec2-linux", 
+                    "name": "EC2 - Linux"
+                }, 
+                {
+                    "code": "ec2-windows", 
+                    "name": "EC2 - Windows"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "ssm-console", 
+                    "name": "SSM Console"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-pinpoint", 
+            "name": "Pinpoint", 
+            "categories": [
+                {
+                    "code": "analytics", 
+                    "name": "Analytics"
+                }, 
+                {
+                    "code": "campaign-management", 
+                    "name": "Campaign Management"
+                }, 
+                {
+                    "code": "import-jobs", 
+                    "name": "Import Jobs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "limit-increase", 
+                    "name": "Limit Increase"
+                }, 
+                {
+                    "code": "api-sdk", 
+                    "name": "API/SDK"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elastic-compute-cloud-windows", 
+            "name": "Elastic Compute Cloud (EC2 - Windows)", 
+            "categories": [
+                {
+                    "code": "ec2-run-command", 
+                    "name": "EC2 Run Command"
+                }, 
+                {
+                    "code": "server-migration-service", 
+                    "name": "Server Migration Service"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "ftp", 
+                    "name": "FTP"
+                }, 
+                {
+                    "code": "ssm-api", 
+                    "name": "SSM API"
+                }, 
+                {
+                    "code": "vpn-solutions", 
+                    "name": "VPN Solutions"
+                }, 
+                {
+                    "code": "dedicated-host-licensing-issue", 
+                    "name": "Dedicated Host - Licensing Issue"
+                }, 
+                {
+                    "code": "vm-import-export", 
+                    "name": "VM Import / Export"
+                }, 
+                {
+                    "code": "dedicated-host-launch-issue", 
+                    "name": "Dedicated Host - Launch Issue"
+                }, 
+                {
+                    "code": "ami-copy", 
+                    "name": "AMI Copy"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "sql-server", 
+                    "name": "SQL Server"
+                }, 
+                {
+                    "code": "email-services", 
+                    "name": "Email Services"
+                }, 
+                {
+                    "code": "iis", 
+                    "name": "IIS"
+                }, 
+                {
+                    "code": "windows-spot-instances", 
+                    "name": "Spot Instances"
+                }, 
+                {
+                    "code": "apache", 
+                    "name": "Apache"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "disk-configurations", 
+                    "name": "Disk Configuration"
+                }, 
+                {
+                    "code": "mysql", 
+                    "name": "MySQL"
+                }, 
+                {
+                    "code": "instance-issue", 
+                    "name": "Instance Issue"
+                }, 
+                {
+                    "code": "ssm-api-domain-join", 
+                    "name": "SSM API Domain Join"
+                }, 
+                {
+                    "code": "systems-manager", 
+                    "name": "Systems Manager"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-servermigration-linux", 
+            "name": "Server Migration Service (Linux)", 
+            "categories": [
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "sms-connector", 
+                    "name": "SMS Connector"
+                }, 
+                {
+                    "code": "replication-job", 
+                    "name": "Replication Job"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-web-application-firewall", 
+            "name": "WAF", 
+            "categories": [
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "rule-configuration", 
+                    "name": "Rule Configuration"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "documentation", 
+                    "name": "Documentation"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "reporting", 
+                    "name": "Reporting"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-direct-connect", 
+            "name": "Direct Connect", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "connection-issue", 
+                    "name": "Connection Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "gamelift", 
+            "name": "GameLift", 
+            "categories": [
+                {
+                    "code": "gamelift-sdk", 
+                    "name": "GameLift SDK"
+                }, 
+                {
+                    "code": "game-sessions", 
+                    "name": "Game Sessions"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "category-builds-fleets", 
+                    "name": "Builds and Fleets"
+                }, 
+                {
+                    "code": "player-sessions", 
+                    "name": "Player Sessions"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-workspaces", 
+            "name": "Workspaces (Windows)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "connection-issue", 
+                    "name": "Connection Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-database-migration-service", 
+            "name": "Database Migration Service", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "schema-conversion-tool", 
+                    "name": "Schema Conversion Tool"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "zocalo", 
+            "name": "WorkDocs", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "mobile-application-issue", 
+                    "name": "Mobile Application Issue"
+                }, 
+                {
+                    "code": "sync-application-issue", 
+                    "name": "Sync Application Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "web-application-issue", 
+                    "name": "Web Application Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "iot-device-management", 
+            "name": "IoT Device Management", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "alexa-for-business", 
+            "name": "Alexa for Business", 
+            "categories": [
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "device-configuration", 
+                    "name": "Device Configuration"
+                }, 
+                {
+                    "code": "skills-issue", 
+                    "name": "Skills Issue"
+                }, 
+                {
+                    "code": "hardware-failure", 
+                    "name": "Hardware Failure"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "api-sdk", 
+                    "name": "API/SDK"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-cloudformation", 
+            "name": "CloudFormation", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "template-issue", 
+                    "name": "Template Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "account-management", 
+            "name": "Account Management", 
+            "categories": [
+                {
+                    "code": "billing", 
+                    "name": "General Account Question"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elastic-block-store", 
+            "name": "Elastic Block Store (EBS)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "volume-issue", 
+                    "name": "Volume Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "key-management-service", 
+            "name": "Key Management Service", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "encryption-sdk", 
+                    "name": "Encryption SDK"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "resource-creation-errors", 
+                    "name": "Resource Creation Errors"
+                }, 
+                {
+                    "code": "cli-issue", 
+                    "name": "CLI Issue"
+                }, 
+                {
+                    "code": "policy-issues", 
+                    "name": "Policy Issues"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "authorization-issue", 
+                    "name": "Authorization Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "codecommit", 
+            "name": "CodeCommit", 
+            "categories": [
+                {
+                    "code": "git-issues", 
+                    "name": "Git Issues"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "repository-issues", 
+                    "name": "Repository Issues"
+                }
+            ]
+        }, 
+        {
+            "code": "workspaces-application-manager", 
+            "name": "WorkSpaces Application Manager", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "wam-client", 
+                    "name": "Amazon WAM Client"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "bring-your-own-app", 
+                    "name": "Bring Your Own Application"
+                }, 
+                {
+                    "code": "marketplace-for-desktop-apps", 
+                    "name": "AWS Marketplace for Desktop Apps"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-glacier", 
+            "name": "Glacier", 
+            "categories": [
+                {
+                    "code": "vault-issue", 
+                    "name": "Vault Issue"
+                }, 
+                {
+                    "code": "restore-from-s3", 
+                    "name": "Restore from S3 Glacier Storage Class"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "sdk-cli", 
+                    "name": "SDK / CLI"
+                }, 
+                {
+                    "code": "glacier-select", 
+                    "name": "Glacier Select"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "archive-issue", 
+                    "name": "Archive Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "service-sumerian", 
+            "name": "Sumerian", 
+            "categories": [
+                {
+                    "code": "access-and-permissions", 
+                    "name": "Access and Permissions"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "cognito-integration", 
+                    "name": "Cognito Integration"
+                }, 
+                {
+                    "code": "sdk", 
+                    "name": "AWS SDK"
+                }, 
+                {
+                    "code": "iot-integration", 
+                    "name": "IoT Integration"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-mechanical-turk", 
+            "name": "Mechanical Turk", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "command-line-tools", 
+                    "name": "Command Line Tools"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-mq", 
+            "name": "MQ", 
+            "categories": [
+                {
+                    "code": "sdk-api-guidance", 
+                    "name": "SDK/API Guidance"
+                }, 
+                {
+                    "code": "documentation", 
+                    "name": "Documentation"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "opsworks-puppet-enterprise", 
+            "name": "OpsWorks for Puppet Enterprise", 
+            "categories": [
+                {
+                    "code": "puppet-support", 
+                    "name": "Puppet Support"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "appsync", 
+            "name": "AppSync", 
+            "categories": [
+                {
+                    "code": "service-functionality", 
+                    "name": "Service Functionality"
+                }, 
+                {
+                    "code": "sdk-api-guidance", 
+                    "name": "SDK/API Guidance"
+                }, 
+                {
+                    "code": "documentation", 
+                    "name": "Documentation"
+                }, 
+                {
+                    "code": "configuration-guidance", 
+                    "name": "Configuration Guidance"
+                }, 
+                {
+                    "code": "sdk-bug", 
+                    "name": "SDK Bug"
+                }, 
+                {
+                    "code": "architectural-guidance-best-practices", 
+                    "name": "Architectural Guidance/Best Practices"
+                }
+            ]
+        }, 
+        {
+            "code": "serverless-application-repository", 
+            "name": "Serverless Application Repository", 
+            "categories": [
+                {
+                    "code": "issues-deploying-application", 
+                    "name": "Issues Deploying Application"
+                }, 
+                {
+                    "code": "access-and-permissions", 
+                    "name": "Access and Permissions"
+                }, 
+                {
+                    "code": "issues-publishing-applications", 
+                    "name": "Issues Publishing Applications"
+                }, 
+                {
+                    "code": "reporting-malicious-apps", 
+                    "name": "Reporting Malicious Apps"
+                }, 
+                {
+                    "code": "licensing-inquiry", 
+                    "name": "Licensing Inquiry"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }
+            ]
+        }, 
+        {
+            "code": "service-eks", 
+            "name": "EKS (Container Service for Kubernetes)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "node-issue", 
+                    "name": "Node Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "limit-increase", 
+                    "name": "Limit Increase"
+                }, 
+                {
+                    "code": "kubernetes-guidance", 
+                    "name": "Kubernetes Guidance"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "master-issue", 
+                    "name": "Master Issue"
+                }, 
+                {
+                    "code": "container-guidance", 
+                    "name": "Docker/Container Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-iot", 
+            "name": "IoT", 
+            "categories": [
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "device-sdk", 
+                    "name": "Device SDK/Hardware/Kits"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "environment-issue", 
+                    "name": "Environment Issue"
+                }, 
+                {
+                    "code": "api-sdk", 
+                    "name": "API/SDK"
+                }
+            ]
+        }, 
+        {
+            "code": "support-api", 
+            "name": "Support API", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "translate", 
+            "name": "Translate", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-lambda", 
+            "name": "Lambda", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "real-permissions", 
+                    "name": "Permissions"
+                }, 
+                {
+                    "code": "service-issue", 
+                    "name": "Service Issue"
+                }, 
+                {
+                    "code": "resource-issue", 
+                    "name": "Resource Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "iot-1-click", 
+            "name": "IoT 1-Click", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "mobile-apps", 
+                    "name": "Mobile Apps issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "service-issue", 
+                    "name": "Service Issue"
+                }, 
+                {
+                    "code": "sdk-api", 
+                    "name": "SDK/API Guidance"
+                }, 
+                {
+                    "code": "device-issues", 
+                    "name": "Device issue"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "dcv-desktop-cloud-visualization", 
+            "name": "DCV (Desktop Cloud Visualization)", 
+            "categories": [
+                {
+                    "code": "server-issues-windows", 
+                    "name": "Server Issues (Windows)"
+                }, 
+                {
+                    "code": "client-issues", 
+                    "name": "Client issues"
+                }, 
+                {
+                    "code": "server-issues-linux", 
+                    "name": "Server Issues (Linux)"
+                }
+            ]
+        }, 
+        {
+            "code": "ec2-container-service", 
+            "name": "Container Service (ECS)", 
+            "categories": [
+                {
+                    "code": "api-sdk-cli", 
+                    "name": "API / SDK / CLI"
+                }, 
+                {
+                    "code": "container-registry", 
+                    "name": "Container Registry"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "container-agent", 
+                    "name": "Container Agent"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elastic-file-system", 
+            "name": "Elastic File System", 
+            "categories": [
+                {
+                    "code": "access-issue", 
+                    "name": "Access Issue"
+                }, 
+                {
+                    "code": "file-system-configuration", 
+                    "name": "File System Configuration"
+                }, 
+                {
+                    "code": "performance", 
+                    "name": "Performance"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "efs-file-sync", 
+                    "name": "EFS File Sync"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-relational-database-service-mysql", 
+            "name": "Relational Database Service (MySQL)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "dynamodb-accelerator", 
+            "name": "DynamoDB Accelerator (DAX)", 
+            "categories": [
+                {
+                    "code": "performance-issue", 
+                    "name": "Performance Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "console-specific", 
+                    "name": "Console Specific"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "chime", 
+            "name": "Chime", 
+            "categories": [
+                {
+                    "code": "managing-chime-teams", 
+                    "name": "Managing Chime Teams"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "chat", 
+                    "name": "Chat"
+                }, 
+                {
+                    "code": "in-meeting-experience", 
+                    "name": "In Meeting Experience"
+                }, 
+                {
+                    "code": "managing-meetings", 
+                    "name": "Managing Meetings"
+                }, 
+                {
+                    "code": "outlook-addin-issue", 
+                    "name": "Outlook Add-in Issue"
+                }, 
+                {
+                    "code": "scheduling-issue", 
+                    "name": "Scheduling Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "config-service", 
+            "name": "Config Service", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "configuration-assistance", 
+                    "name": "Configuration Assistance"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-step-functions", 
+            "name": "Step Functions", 
+            "categories": [
+                {
+                    "code": "executions", 
+                    "name": "Executions"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "activities", 
+                    "name": "Activities"
+                }, 
+                {
+                    "code": "language", 
+                    "name": "Amazon States Language"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "permissions-iam", 
+                    "name": "Permissions/IAM"
+                }
+            ]
+        }, 
+        {
+            "code": "single-sign-on", 
+            "name": "Single Sign-On", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-iot-analytics", 
+            "name": "IoT Analytics", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "sdk-api-guidance", 
+                    "name": "SDK/API Guidance"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "service-issue", 
+                    "name": "Service Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "cloudtrail", 
+            "name": "CloudTrail", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "log-delivery", 
+                    "name": "Log File Delivery"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "log-notification", 
+                    "name": "Log File Notification"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-simple-queue-service", 
+            "name": "Simple Queue Service (SQS)", 
+            "categories": [
+                {
+                    "code": "development-api-migration", 
+                    "name": "Development - API Migration"
+                }, 
+                {
+                    "code": "console-issues", 
+                    "name": "Console Issues"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "queue-issue", 
+                    "name": "Queue Issue"
+                }, 
+                {
+                    "code": "feature-requests", 
+                    "name": "Feature Requests"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "cloud9", 
+            "name": "Cloud9", 
+            "categories": [
+                {
+                    "code": "ec2-environment-creation", 
+                    "name": "EC2 environment creation"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "permissions", 
+                    "name": "Permissions"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "environment-issue", 
+                    "name": "Environment issue"
+                }, 
+                {
+                    "code": "codestar", 
+                    "name": "CodeStar"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-virtual-private-network", 
+            "name": "VPN", 
+            "categories": [
+                {
+                    "code": "performance", 
+                    "name": "Performance"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connection-establishment", 
+                    "name": "Connection Establishment"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "tunnel-stability", 
+                    "name": "Tunnel Stability"
+                }
+            ]
+        }, 
+        {
+            "code": "neptune", 
+            "name": "Neptune", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-trusted-advisor", 
+            "name": "Trusted Advisor", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "api-gateway", 
+            "name": "API Gateway", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "api-permissions-security", 
+                    "name": "API Permissions and Security"
+                }, 
+                {
+                    "code": "backend-endpoint-integration", 
+                    "name": "Back-End Endpoint Integration"
+                }, 
+                {
+                    "code": "api-cache", 
+                    "name": "API Cache"
+                }, 
+                {
+                    "code": "generated-sdk", 
+                    "name": "Generated SDK"
+                }, 
+                {
+                    "code": "api-versioning", 
+                    "name": "API Versioning"
+                }, 
+                {
+                    "code": "import-export-api", 
+                    "name": "Import / Export of APIs"
+                }, 
+                {
+                    "code": "architectural-guidance", 
+                    "name": "Architectural Guidance"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "mapping-template", 
+                    "name": "Mapping Templates"
+                }, 
+                {
+                    "code": "performance-issue", 
+                    "name": "Errors and Performance Issues"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "other-aws-services", 
+                    "name": "Other AWS Services"
+                }, 
+                {
+                    "code": "custom-domain-names", 
+                    "name": "Custom Domain Names"
+                }, 
+                {
+                    "code": "api-configuration", 
+                    "name": "API Configuration"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-simple-workflow-service", 
+            "name": "Simple Workflow Service (SWF)", 
+            "categories": [
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "aws-flow-framework", 
+                    "name": "AWS Flow Framework"
+                }, 
+                {
+                    "code": "designing-workflows", 
+                    "name": "Designing Workflows"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elastic-transcoder", 
+            "name": "Elastic Transcoder", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "permissions", 
+                    "name": "Permissions (S3/IAM Roles)"
+                }, 
+                {
+                    "code": "transcoding-pipeline", 
+                    "name": "Transcoding Pipeline"
+                }, 
+                {
+                    "code": "transcoding-presets", 
+                    "name": "Transcoding Presets"
+                }, 
+                {
+                    "code": "transcoding-jobs", 
+                    "name": "Transcoding Jobs"
+                }, 
+                {
+                    "code": "sns-notifications", 
+                    "name": "SNS Notifications"
+                }, 
+                {
+                    "code": "format-support", 
+                    "name": "Format Support"
+                }, 
+                {
+                    "code": "codec-parameters", 
+                    "name": "Codec Parameters"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-xray", 
+            "name": "X Ray", 
+            "categories": [
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "daemon-issues", 
+                    "name": "Daemon Issues"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-organizations", 
+            "name": "Organizations", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "console-specific", 
+                    "name": "Console Specific"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "sentinel-report-incident", 
+            "name": "AMS - Report Incident", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "security-related", 
+                    "name": "Security Related"
+                }, 
+                {
+                    "code": "performance-issue", 
+                    "name": "Performance Issue"
+                }, 
+                {
+                    "code": "access-issues", 
+                    "name": "Access Issues"
+                }, 
+                {
+                    "code": "availability", 
+                    "name": "Availability"
+                }
+            ]
+        }, 
+        {
+            "code": "mediastore", 
+            "name": "MediaStore", 
+            "categories": [
+                {
+                    "code": "sdk-cli-api-issue", 
+                    "name": "SDK/CLI/API Issue"
+                }, 
+                {
+                    "code": "object-issue", 
+                    "name": "Object Issue"
+                }, 
+                {
+                    "code": "permissions-and-access-control", 
+                    "name": "Permissions and Access Control"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "throughput-latency-issues", 
+                    "name": "Throughput/Latency Issues"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "container-issue", 
+                    "name": "Container Issue"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-kinesis", 
+            "name": "Kinesis Streams", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "kinesis-client-library", 
+                    "name": "Kinesis Client Library"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-kinesis-analytics", 
+            "name": "Kinesis Analytics", 
+            "categories": [
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "sql-syntax", 
+                    "name": "SQL Syntax"
+                }, 
+                {
+                    "code": "input-schema-configuration", 
+                    "name": "Input Schema Configuration"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-simple-email-service", 
+            "name": "Simple Email Service (SES)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "sdk-email-applications", 
+                    "name": "SDK / Email Applications"
+                }, 
+                {
+                    "code": "delivery-failure", 
+                    "name": "Delivery Failure"
+                }, 
+                {
+                    "code": "domain-email-verification", 
+                    "name": "Domain / Email Verification"
+                }, 
+                {
+                    "code": "permissions-policies", 
+                    "name": "Permissions / Policies"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "bounces-complaints-blacklists", 
+                    "name": "Bounces / Complaints / Blacklists"
+                }, 
+                {
+                    "code": "monitoring-notifications-auditing", 
+                    "name": "Monitoring / Notifications / Auditing"
+                }, 
+                {
+                    "code": "improving-email-deliverability", 
+                    "name": "Improving Email Deliverability"
+                }, 
+                {
+                    "code": "inbound-email", 
+                    "name": "Inbound Email"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "suspension-probation", 
+                    "name": "Suspension / Probation"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "production-access", 
+                    "name": "Production Access"
+                }, 
+                {
+                    "code": "email-issue", 
+                    "name": "Email Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "lambda-edge", 
+            "name": "Lambda@Edge", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other / Limit Increase / Access"
+                }, 
+                {
+                    "code": "permissions", 
+                    "name": "Permissions"
+                }, 
+                {
+                    "code": "errors-performance", 
+                    "name": "Errors and Performance"
+                }, 
+                {
+                    "code": "feature-requests", 
+                    "name": "Feature Requests"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "vcenter-management-portal", 
+            "name": "vCenter Management Portal", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "vm-import-export", 
+                    "name": "VM Import / Export"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "general-info", 
+            "name": "General Info and Getting Started", 
+            "categories": [
+                {
+                    "code": "charges", 
+                    "name": "How Will I Be Charged?"
+                }, 
+                {
+                    "code": "gdpr-queries", 
+                    "name": "Data Privacy Query"
+                }, 
+                {
+                    "code": "reserved-instances", 
+                    "name": "Reserved Instances"
+                }, 
+                {
+                    "code": "resource", 
+                    "name": "Where is my Resource?"
+                }, 
+                {
+                    "code": "using-aws", 
+                    "name": "Using AWS & Services"
+                }, 
+                {
+                    "code": "free-tier", 
+                    "name": "Free Tier"
+                }, 
+                {
+                    "code": "security-and-compliance", 
+                    "name": "Security & Compliance"
+                }, 
+                {
+                    "code": "account-structure", 
+                    "name": "Account Structure"
+                }
+            ]
+        }, 
+        {
+            "code": "mobile-hub", 
+            "name": "Mobile Hub", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "API/SDK"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "service-issue", 
+                    "name": "Service Issue"
+                }, 
+                {
+                    "code": "project-configuration", 
+                    "name": "Project Configuration"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "build-issue", 
+                    "name": "Build Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-relational-database-service-aurora", 
+            "name": "Relational Database Service (Aurora - MySQL-compatible)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "directory-service", 
+            "name": "Directory Service", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "directory-issue", 
+                    "name": "Directory Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-simpledb", 
+            "name": "SimpleDB", 
+            "categories": [
+                {
+                    "code": "domain-issue", 
+                    "name": "Domain Issue"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "query-issue", 
+                    "name": "Query Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "customer-account", 
+            "name": "Account", 
+            "categories": [
+                {
+                    "code": "unable-to-access", 
+                    "name": "Unable to Access my Account"
+                }, 
+                {
+                    "code": "security", 
+                    "name": "Security"
+                }, 
+                {
+                    "code": "close-account", 
+                    "name": "Close/Cancel My Account"
+                }, 
+                {
+                    "code": "other-account-issues", 
+                    "name": "Other Account Issues"
+                }, 
+                {
+                    "code": "ownership-transfer", 
+                    "name": "Ownership Transfer"
+                }, 
+                {
+                    "code": "convert-ec2-classic-to-vpc", 
+                    "name": "Convert EC2 Classic to VPC"
+                }, 
+                {
+                    "code": "change-account-details", 
+                    "name": "Change Account Details"
+                }, 
+                {
+                    "code": "activation", 
+                    "name": "Activation"
+                }, 
+                {
+                    "code": "compliance-and-accreditation", 
+                    "name": "Compliance & Accreditations"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-relational-database-service-aurora-postgres", 
+            "name": "Relational Database Service (Aurora - PostgreSQL-compatible)", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "codepipeline", 
+            "name": "CodePipeline", 
+            "categories": [
+                {
+                    "code": "api-sdk-cli", 
+                    "name": "API / SDK / CLI"
+                }, 
+                {
+                    "code": "custom-actions", 
+                    "name": "Custom Actions"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "pipeline-setup", 
+                    "name": "Pipeline Setup"
+                }, 
+                {
+                    "code": "building-and-transitions", 
+                    "name": "Building and Transitions"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-import", 
+            "name": "Import Export (Disk)", 
+            "categories": [
+                {
+                    "code": "manifest-creation", 
+                    "name": "Manifest Creation"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "job-inquiry", 
+                    "name": "Job Inquiry"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "shipping-issue", 
+                    "name": "Shipping Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "secrets-manager", 
+            "name": "Secrets Manager", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "policy-issue", 
+                    "name": "Policy Issue"
+                }, 
+                {
+                    "code": "secrets-rotation", 
+                    "name": "Secrets Rotation"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "cli-issue", 
+                    "name": "CLI Issue"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "API"
+                }, 
+                {
+                    "code": "resource-creation-error", 
+                    "name": "Resource Creation Error"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "kinesis-video-streams", 
+            "name": "Kinesis Video Streams", 
+            "categories": [
+                {
+                    "code": "stream-parser-library", 
+                    "name": "Stream Parser Library"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "producer-sdk", 
+                    "name": "Producer SDK"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "lumberyard", 
+            "name": "Lumberyard", 
+            "categories": [
+                {
+                    "code": "resource-management", 
+                    "name": "AWS Resource Management"
+                }, 
+                {
+                    "code": "dynamodb-database", 
+                    "name": "DynamoDB (Database)"
+                }, 
+                {
+                    "code": "sqs-message-queuing-service", 
+                    "name": "SQS (Message queuing service)"
+                }, 
+                {
+                    "code": "resource-access-permissions", 
+                    "name": "AWS Resource Access & Permissions"
+                }, 
+                {
+                    "code": "lambda-cloud-functions", 
+                    "name": "Lambda (Cloud functions)"
+                }, 
+                {
+                    "code": "unspecified", 
+                    "name": "CloudCanvas/Unspecified"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "team-management-creds", 
+                    "name": "Team Management & Credentials"
+                }, 
+                {
+                    "code": "s3-storage", 
+                    "name": "S3 (Storage)"
+                }, 
+                {
+                    "code": "sns-notification-service", 
+                    "name": "SNS (Notification service)"
+                }, 
+                {
+                    "code": "cognito-player-identity", 
+                    "name": "Cognito (Player identity)"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-cloudsearch", 
+            "name": "CloudSearch ", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "performance-issue", 
+                    "name": "Performance Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "fargate", 
+            "name": "Fargate", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-inspector", 
+            "name": "Inspector", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "console-issue", 
+                    "name": "Console Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-redshift", 
+            "name": "Redshift", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "connectivity", 
+                    "name": "Connectivity"
+                }, 
+                {
+                    "code": "migration-issue", 
+                    "name": "Migration Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "limit-increase", 
+                    "name": "Limit Increase"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "redshift-spectrum", 
+                    "name": "Redshift Spectrum"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-quicksight", 
+            "name": "QuickSight", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "web-application-issues", 
+                    "name": "Web Application Issues"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "datasource-issues", 
+                    "name": "Datasource Issues"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-athena", 
+            "name": "Athena", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "query-related-issue", 
+                    "name": "Query Related Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elasticsearch-service", 
+            "name": "Elasticsearch Service", 
+            "categories": [
+                {
+                    "code": "logstash", 
+                    "name": "Logstash"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "performance", 
+                    "name": "Performance"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "elasticsearch", 
+                    "name": "Elasticsearch"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "query", 
+                    "name": "Query"
+                }, 
+                {
+                    "code": "kibana", 
+                    "name": "Kibana"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "service-deadline", 
+            "name": "Deadline", 
+            "categories": [
+                {
+                    "code": "cloud-integration", 
+                    "name": "Cloud Integration"
+                }, 
+                {
+                    "code": "installation-configuration", 
+                    "name": "Installation/Configuration"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "scripting-sdk", 
+                    "name": "Scripting/SDK"
+                }, 
+                {
+                    "code": "application-operation", 
+                    "name": "Client Application Operation"
+                }, 
+                {
+                    "code": "licensing-issues", 
+                    "name": "Licensing Issue"
+                }, 
+                {
+                    "code": "rendering-submission-issues", 
+                    "name": "Rendering/Submission Issue"
+                }, 
+                {
+                    "code": "database-issues", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "infrastructure-issues", 
+                    "name": "Infrastructure Issue"
+                }
+            ]
+        }, 
+        {
+            "code": "mediaconvert", 
+            "name": "MediaConvert", 
+            "categories": [
+                {
+                    "code": "job-status-notifications-cloudwatch-events", 
+                    "name": "Job Status Notifications (CloudWatch Events)"
+                }, 
+                {
+                    "code": "api-sdk-issues", 
+                    "name": "API/SDK Issues"
+                }, 
+                {
+                    "code": "console-issues", 
+                    "name": "Console Issues"
+                }, 
+                {
+                    "code": "media-processing-issues", 
+                    "name": "Media Processing Issues"
+                }, 
+                {
+                    "code": "drm-encryption", 
+                    "name": "DRM/Encryption"
+                }, 
+                {
+                    "code": "permissions-iam-role", 
+                    "name": "Permissions (IAM Role)"
+                }, 
+                {
+                    "code": "job-validation-issues", 
+                    "name": "Job Validation Issues"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elastic-mapreduce", 
+            "name": "Elastic MapReduce (EMR)", 
+            "categories": [
+                {
+                    "code": "hive", 
+                    "name": "Hive"
+                }, 
+                {
+                    "code": "job-flow-issue", 
+                    "name": "Job Flow Issue"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "stuck-job", 
+                    "name": "Stuck Job"
+                }, 
+                {
+                    "code": "mapr", 
+                    "name": "MapR"
+                }, 
+                {
+                    "code": "limit-increase", 
+                    "name": "Limit Increase"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "pig", 
+                    "name": "Pig"
+                }, 
+                {
+                    "code": "hadoop-configuration", 
+                    "name": "Hadoop Configuration"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "job-failed", 
+                    "name": "Job Failed"
+                }, 
+                {
+                    "code": "hbase", 
+                    "name": "HBase"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-elastic-beanstalk", 
+            "name": "Elastic Beanstalk", 
+            "categories": [
+                {
+                    "code": "rds-guidance", 
+                    "name": "RDS Guidance"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "infrastructure-guidance", 
+                    "name": "Infrastructure Guidance"
+                }, 
+                {
+                    "code": "application-deployment-issue", 
+                    "name": "Application Deployment Issue"
+                }, 
+                {
+                    "code": "environment-issue", 
+                    "name": "Environment Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-cognito", 
+            "name": "Cognito", 
+            "categories": [
+                {
+                    "code": "console", 
+                    "name": "Console"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "api", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "sdk", 
+                    "name": "SDK Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "lambda-integration", 
+                    "name": "Lambda Integration"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-rekognition", 
+            "name": "Rekognition", 
+            "categories": [
+                {
+                    "code": "video-rekognition-failure", 
+                    "name": "Video Recognition Failure"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "Image API"
+                }, 
+                {
+                    "code": "image-recognition-failure", 
+                    "name": "Image Recognition Failure"
+                }, 
+                {
+                    "code": "video-api", 
+                    "name": "Video API"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "aws-storage-gateway", 
+            "name": "Storage Gateway", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "performance-issue", 
+                    "name": "Performance Issue"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "network-issue", 
+                    "name": "Network Issue"
+                }, 
+                {
+                    "code": "gateway-appliance-issue", 
+                    "name": "Gateway Appliance Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "sentinel-change-request", 
+            "name": "AMS - Change Request", 
+            "categories": [
+                {
+                    "code": "administration-basic", 
+                    "name": "Administration - Basic"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "security-related", 
+                    "name": "Security Related"
+                }, 
+                {
+                    "code": "environment-verification", 
+                    "name": "Environment Verification"
+                }, 
+                {
+                    "code": "change-notification-other", 
+                    "name": "Change Notification - Other"
+                }, 
+                {
+                    "code": "asset-configuration-update", 
+                    "name": "Asset Configuration Update"
+                }, 
+                {
+                    "code": "patch-related", 
+                    "name": "Patch Related"
+                }, 
+                {
+                    "code": "backup-configuration", 
+                    "name": "Backup Configuration"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "coordinated-change", 
+                    "name": "Coordinated Change"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-dynamodb", 
+            "name": "DynamoDB", 
+            "categories": [
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "database-issue", 
+                    "name": "Database Issue"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-elastic-compute-cloud-linux", 
+            "name": "Elastic Compute Cloud (EC2 - Linux)", 
+            "categories": [
+                {
+                    "code": "ssh-issue", 
+                    "name": "SSH Issue"
+                }, 
+                {
+                    "code": "linux-spot-instances", 
+                    "name": "Spot Instances"
+                }, 
+                {
+                    "code": "ec2-run-command", 
+                    "name": "EC2 Run Command"
+                }, 
+                {
+                    "code": "server-migration-service", 
+                    "name": "Server Migration Service"
+                }, 
+                {
+                    "code": "other", 
+                    "name": "Other"
+                }, 
+                {
+                    "code": "ftp", 
+                    "name": "FTP"
+                }, 
+                {
+                    "code": "vpn-solutions", 
+                    "name": "VPN Solutions"
+                }, 
+                {
+                    "code": "dedicated-host-licensing-issue", 
+                    "name": "Dedicated Host - Licensing Issue"
+                }, 
+                {
+                    "code": "vm-import-export", 
+                    "name": "VM Import / Export"
+                }, 
+                {
+                    "code": "dedicated-host-launch-issue", 
+                    "name": "Dedicated Host - Launch Issue"
+                }, 
+                {
+                    "code": "ami-copy", 
+                    "name": "AMI Copy"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "email-services", 
+                    "name": "Email Services"
+                }, 
+                {
+                    "code": "apache", 
+                    "name": "Apache"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "scheduled-event", 
+                    "name": "Scheduled Event"
+                }, 
+                {
+                    "code": "disk-configurations", 
+                    "name": "Disk Configuration"
+                }, 
+                {
+                    "code": "mysql", 
+                    "name": "MySQL"
+                }, 
+                {
+                    "code": "instance-issue", 
+                    "name": "Instance Issue"
+                }, 
+                {
+                    "code": "systems-manager", 
+                    "name": "Systems Manager"
+                }
+            ]
+        }, 
+        {
+            "code": "amazon-machine-learning", 
+            "name": "Machine Learning", 
+            "categories": [
+                {
+                    "code": "job-flow-issue", 
+                    "name": "Job Flow Issue"
+                }, 
+                {
+                    "code": "machine-learning-configuration", 
+                    "name": "Machine Learning Configuration"
+                }, 
+                {
+                    "code": "apis", 
+                    "name": "APIs"
+                }, 
+                {
+                    "code": "datasource-database", 
+                    "name": "Datasource - Database"
+                }, 
+                {
+                    "code": "feature-request", 
+                    "name": "Feature Request"
+                }, 
+                {
+                    "code": "job-failed", 
+                    "name": "Job Failed"
+                }, 
+                {
+                    "code": "general-guidance", 
+                    "name": "General Guidance"
+                }, 
+                {
+                    "code": "datasource-s3", 
+                    "name": "Datasource - S3"
+                }, 
+                {
+                    "code": "model-quality", 
+                    "name": "Machine Learning Model Quality"
+                }
+            ]
+        }
+    ]
+}
