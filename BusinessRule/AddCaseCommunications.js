@@ -3,12 +3,12 @@
 gs.include('SupportApi');
 (function executeRule(current, previous) {
     (function() {
-        var aws_incident = new GlideRecord('x_195647_aws__x_195647_aws_incidents');
+        var aws_incident = new GlideRecord('x_195647_aws__support_cases');
         aws_incident.addQuery('incident','=', current.element_id);
         aws_incident.query();
         if (aws_incident.next() && aws_incident.aws_account.active) {
             if (current.element == 'comments' &&
-                current.sys_created_by != 'admin') {
+                current.sys_created_by != 'ams') {
                 var incident = aws_incident.incident.getRefRecord();
                 var aws_account = aws_incident.aws_account.getRefRecord();
                 var creds = {

@@ -49,7 +49,7 @@ function insertServiceChoices(service, parent) {
         language: "en",
         inactive: false,
         sequence: 90
-    }
+    };
     var incident_category = insertChoice(choice);
 
     for (var s in services) {
