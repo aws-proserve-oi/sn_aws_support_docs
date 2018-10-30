@@ -8,7 +8,7 @@ gs.include('SupportApi');
         aws_incident.query();
         if (aws_incident.next() && aws_incident.aws_account.active) {
             if (current.element == 'comments' &&
-                current.sys_created_by != 'ams') {
+                current.sys_created_by != 'aws') {
                 var incident = aws_incident.incident.getRefRecord();
                 var aws_account = aws_incident.aws_account.getRefRecord();
                 var creds = {
