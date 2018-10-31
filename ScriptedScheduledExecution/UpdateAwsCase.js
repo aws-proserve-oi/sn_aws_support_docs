@@ -1,5 +1,5 @@
 gs.include('SupportApi');
-gs.include('global.SetJournalComments');
+gs.include('JournalUtils');
 
 function getLastCommentTimeByUser(incident_id, user_name) {
     var timestamp;
@@ -107,7 +107,7 @@ function updateCommunications(aws_incident, aws_account) {
     //use this regexp to check the source of the comments the api provides.
     var snow_user = new RegExp(aws_account.iam_user_name);
     var incident = aws_incident.incident.getRefRecord();
-    var journal = new global.SetJournalComments();
+    var journal = new JournalUtils();
     if (incident.isNewRecord()) {return;}
     // update with a comment for each comment returned thats not created by user.
     for (var c = 0; c < comms.length; c++) {
@@ -124,9 +124,9 @@ function updateCommunications(aws_incident, aws_account) {
             }
         }
         incident.autoSysFields(false);
-        journal.set(incident, comm.body, 'ams');
+        journal.setJournalEntry(incident.comments, comm.body);
         incident.sys_updated_on = comm.timeCreated.substring(0,(comm.timeCreated.length-5)).replace("T", " ");
-        incident.sys_updated_by = aws_account.assignment_user.user_name;
+        incident.sys_updated_by = 'aws';
         incident.update();
         return incident;
     }
