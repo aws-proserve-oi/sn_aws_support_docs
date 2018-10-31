@@ -1,12 +1,24 @@
 gs.include('SupportApi');
 gs.include('JournalUtils');
 
-function getLastCommentTimeByUser(incident_id, user_name) {
+var aws_user = (function() {
+    gr = new GlideRecord('sys_user');
+    gr.addQuery('user_name', gs.getProperty("x_195647_aws_.Config.AWS.username"));
+    gr.query();
+    if (gr.hasNext()) {
+        gr.next();
+        return gr.sys_id;
+    }
+})();
+
+var aws_user_name = gs.getProperty("x_195647_aws_.Config.AWS.username");
+
+function getLastCommentTimeByUser(incident_id) {
     var timestamp;
     var activity = new GlideRecord('sys_journal_field');
     activity.addQuery('element_id','=', String(incident_id));
     activity.addQuery('element','=', "comments");
-    activity.addQuery('sys_created_by','=', user_name);
+    activity.addQuery('sys_created_by','=', aws_user_name);
     activity.orderByDesc('sys_created_on');
     activity.setLimit(1);
     activity.query();
@@ -90,7 +102,7 @@ function getActiveCasesForAccount(aws_account) {
 
 function updateCommunications(aws_incident, aws_account) {
     // get last remote update sync.
-    last_comment_time = getLastCommentTimeByUser(aws_incident.incident, 'admin');
+    last_comment_time = getLastCommentTimeByUser(aws_incident.incident);
 
     var params = {
         afterTime: last_comment_time,
@@ -105,14 +117,14 @@ function updateCommunications(aws_incident, aws_account) {
     var comms = AwsApi.getCaseCommunications(params).slice(0).reverse();
     gs.info("GET Case comms from "+last_comment_time+' for '+aws_incident.case_id+' cases '+JSON.stringify(comms));
     //use this regexp to check the source of the comments the api provides.
-    var snow_user = new RegExp(aws_account.iam_user_name);
+    var snow_user = new RegExp(aws_account.iam_username);
     var incident = aws_incident.incident.getRefRecord();
-    var journal = new JournalUtils();
+    var utils = new JournalUtils();
     if (incident.isNewRecord()) {return;}
     // update with a comment for each comment returned thats not created by user.
     
     for (var c = 0; c < comms.length; c++) {
-        gs.info("COMM "+comms[c]);
+        gs.info("COMM "+JSON.stringify(comms[c]));
         var comm = comms[c];
         if (comm.submittedBy.match(snow_user)) { return; }
         if (comm.attachmentSet.length > 0) {
@@ -125,11 +137,12 @@ function updateCommunications(aws_incident, aws_account) {
                 sa.writeBase64( incident, String(attachment.fileName), 'text/plain', String(attachment.data));
             }
         }
-        incident.autoSysFields(false);
-        journal.setJournalEntry(incident.comments, comm.body);
-        incident.sys_updated_on = comm.timeCreated.substring(0,(comm.timeCreated.length-5)).replace("T", " ");
-        incident.sys_updated_by = gs.getProperty("x_195647_aws_.Config.AWS.username");
+        //incident.autoSysFields(false);
+        utils.setJournalEntry(incident.comments, comm.body, comm.submittedBy);
+        var originalUser = utils.impersonate(aws_user);
+        //incident.comments = comm.body;
         incident.update();
+        utils.impersonate(originalUser);
     }
     return incident;
 }
