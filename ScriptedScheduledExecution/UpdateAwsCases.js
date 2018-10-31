@@ -1,17 +1,17 @@
 gs.include('SupportApi');
 gs.include('JournalUtils');
 
+var aws_user_name = gs.getProperty("x_195647_aws_.Config.AWS.username");
+
 var aws_user = (function() {
     gr = new GlideRecord('sys_user');
-    gr.addQuery('user_name', gs.getProperty("x_195647_aws_.Config.AWS.username"));
+    gr.addQuery('user_name', aws_user_name);
     gr.query();
     if (gr.hasNext()) {
         gr.next();
         return gr.sys_id;
     }
 })();
-
-var aws_user_name = gs.getProperty("x_195647_aws_.Config.AWS.username");
 
 function getLastCommentTimeByUser(incident_id) {
     var timestamp;
@@ -38,7 +38,7 @@ function setIncidentState(incident, incident_case, aws_incident, aws_account) {
             break;
         case 'work-in-progress':
             incident.state = 2;
-            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
+            incident.assigned_to = aws_user_name;
             break;
         case 'pending-customer-action':
             incident.state = 2;
@@ -46,19 +46,19 @@ function setIncidentState(incident, incident_case, aws_incident, aws_account) {
             break;
         case 'customer-action-completed':
             incident.state = 2;
-            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
+            incident.assigned_to = aws_user_name;
             break;
         case 'opened':
             incident.state = 2;
-            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
+            incident.assigned_to = aws_user_name;
             break;
         case 'resolved':
             incident.state = 6;
             //hardocded as there is no resolution code advertised by AWS
             incident.close_code = 'Resolved'; 
             incident.close_notes = 'Resolved by AWS';
-            incident.resolved_by = gs.getProperty("x_195647_aws_.Config.AWS.username");
-            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
+            incident.resolved_by = aws_user_name;
+            incident.assigned_to = aws_user_name;
             break;
         case 'reopened':
             incident.state = 1;
@@ -138,8 +138,9 @@ function updateCommunications(aws_incident, aws_account) {
             }
         }
         //incident.autoSysFields(false);
-        utils.setJournalEntry(incident.comments, comm.body, comm.submittedBy);
         var originalUser = utils.impersonate(aws_user);
+        utils.setJournalEntry(incident.comments, comm.body, comm.submittedBy);
+        
         //incident.comments = comm.body;
         incident.update();
         utils.impersonate(originalUser);
