@@ -26,7 +26,7 @@ function setIncidentState(incident, incident_case, aws_incident, aws_account) {
             break;
         case 'work-in-progress':
             incident.state = 2;
-            incident.assigned_to = aws_account.assignment_user;
+            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
             break;
         case 'pending-customer-action':
             incident.state = 2;
@@ -34,19 +34,19 @@ function setIncidentState(incident, incident_case, aws_incident, aws_account) {
             break;
         case 'customer-action-completed':
             incident.state = 2;
-            incident.assigned_to = aws_account.assignment_user;
+            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
             break;
         case 'opened':
             incident.state = 2;
-            incident.assigned_to = aws_account.assignment_user;
+            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
             break;
         case 'resolved':
             incident.state = 6;
             //hardocded as there is no resolution code advertised by AWS
             incident.close_code = 'Resolved'; 
             incident.close_notes = 'Resolved by AWS';
-            incident.resolved_by = aws_account.assignment_user;
-            incident.assigned_to = aws_account.assignment_user;
+            incident.resolved_by = gs.getProperty("x_195647_aws_.Config.AWS.username");
+            incident.assigned_to = gs.getProperty("x_195647_aws_.Config.AWS.username");
             break;
         case 'reopened':
             incident.state = 1;
@@ -102,15 +102,17 @@ function updateCommunications(aws_incident, aws_account) {
         accessKeyId: String(aws_account.aws_api_key),
         secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
     });
-    var comms = AwsApi.getCaseCommunications(params);
-    //gs.info("GET Case comms from "+last_comment_time+' for '+aws_incident.case_id+' cases '+JSON.stringify(comms));
+    var comms = AwsApi.getCaseCommunications(params).slice(0).reverse();
+    gs.info("GET Case comms from "+last_comment_time+' for '+aws_incident.case_id+' cases '+JSON.stringify(comms));
     //use this regexp to check the source of the comments the api provides.
     var snow_user = new RegExp(aws_account.iam_user_name);
     var incident = aws_incident.incident.getRefRecord();
     var journal = new JournalUtils();
     if (incident.isNewRecord()) {return;}
     // update with a comment for each comment returned thats not created by user.
+    
     for (var c = 0; c < comms.length; c++) {
+        gs.info("COMM "+comms[c]);
         var comm = comms[c];
         if (comm.submittedBy.match(snow_user)) { return; }
         if (comm.attachmentSet.length > 0) {
@@ -126,10 +128,10 @@ function updateCommunications(aws_incident, aws_account) {
         incident.autoSysFields(false);
         journal.setJournalEntry(incident.comments, comm.body);
         incident.sys_updated_on = comm.timeCreated.substring(0,(comm.timeCreated.length-5)).replace("T", " ");
-        incident.sys_updated_by = 'aws';
+        incident.sys_updated_by = gs.getProperty("x_195647_aws_.Config.AWS.username");
         incident.update();
-        return incident;
     }
+    return incident;
 }
 
 function createNewIncidentRecord(aws_incident, aws_case, aws_account) {
@@ -154,7 +156,7 @@ function createNewIncidentRecord(aws_incident, aws_case, aws_account) {
     aws_account.query();
     while (aws_account.next()) {
         if (aws_account.active) {
-            gs.info("UPDATE from account: " + aws_account.name);
+            //gs.info("UPDATE from account: " + aws_account.name);
             var aws_cases = getActiveCasesForAccount(aws_account);
             if (!aws_cases) {continue;}
             for (var i = 0; i < aws_cases.length; i++) {
