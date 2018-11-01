@@ -3,7 +3,7 @@ gs.include('SupportApi');
     (function() {
         if (current.created_by == "admin") { return;}
         if (current.table_name == 'incident') {
-            var aws_incident = new GlideRecord('x_195647_aws__x_195647_aws_incidents');
+            var aws_incident = new GlideRecord('x_195647_aws__support_cases');
             aws_incident.addQuery('incident','=', current.table_sys_id);
             aws_incident.query();
             if (aws_incident.next()) {
@@ -27,9 +27,17 @@ gs.include('SupportApi');
                 AWSApi = new SupportApi(creds);
                 var attachmentResponse = AWSApi.addAttachmentsToSet(params);
 
+                var user = new GlideRecord('sys_user');
+                user.addQuery('user_name', current.sys_created_by);
+                user.query();
+                user.next();
+                var author = user.first_name + " "  +
+                             user.last_name  + " <" + 
+                             user.email      + ">";
+                
                 params = {
                     caseId: String(aws_incident.case_id),
-                    communicationBody: 'New attachment added from Service Now.',
+                    communicationBody: 'New attachment added by ' + author,
                     attachmentSetId: attachmentResponse.attachmentSetId
                 };
                 var result = AWSApi.addCaseCommunications(params);

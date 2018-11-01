@@ -125,16 +125,6 @@ function updateCommunications(aws_incident, aws_account) {
         //gs.info("COMM "+JSON.stringify(comms[c]));
         var comm = comms[c];
         if (comm.submittedBy.match(snow_user)) { continue; }
-        if (comm.attachmentSet.length > 0) {
-            for (var a = 0; a < comm.attachmentSet.length; a++) {
-                params = {
-                    attachmentId: String(comm.attachmentSet[a].attachmentId)
-                };
-                attachment = AwsApi.describeAttachment(params).attachment;
-                var sa = new GlideSysAttachment();
-                sa.writeBase64( incident, String(attachment.fileName), 'text/plain', String(attachment.data));
-            }
-        }
         var utils = new JournalUtils();
         utils.addAuthoredComment(incident,comm);
     }
