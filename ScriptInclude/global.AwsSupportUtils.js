@@ -10,12 +10,8 @@ AwsSupportUtils.prototype = {
         this.aws_user = gr;
     },
 
-    impersonate_aws_user: function() {
-        return gs.getSession().impersonate(this.aws_user.sys_id);
-    },
-
     setJournalEntry: function(incident, object, user) {
-      var originalUser = this.impersonate_aws_user();
+      var originalUser = gs.getSession().impersonate(this.aws_user.sys_id);
       incident.comments.setJournalEntry(object, user);
       incident.update();
       gs.getSession().impersonate(originalUser);

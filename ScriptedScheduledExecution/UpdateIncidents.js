@@ -1,5 +1,5 @@
 gs.include('SupportApi');
-gs.include('JournalUtils');
+gs.include('IncidentUtils');
 
 var aws_user_name = gs.getProperty("x_195647_aws_.Config.AWS.username");
 
@@ -125,7 +125,7 @@ function updateCommunications(aws_incident, aws_account) {
         //gs.info("COMM "+JSON.stringify(comms[c]));
         var comm = comms[c];
         if (comm.submittedBy.match(snow_user)) { continue; }
-        var utils = new JournalUtils();
+        var utils = new IncidentUtils();
         utils.addAuthoredComment(incident,comm);
     }
     return incident;

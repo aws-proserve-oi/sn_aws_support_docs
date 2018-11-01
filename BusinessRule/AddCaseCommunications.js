@@ -1,10 +1,10 @@
 //condition: current.element == 'comments'
 //gs.info("RUN - PushIncidentComments "+current.value);
 gs.include('SupportApi');
-gs.include('JournalUtils');
+gs.include('IncidentUtils');
 (function executeRule(current, previous) {
     (function() {
-        var utils = new JournalUtils();
+        var utils = new IncidentUtils();
         var aws_incident = new GlideRecord('x_195647_aws__support_cases');
         aws_incident.addQuery('incident','=', current.element_id);
         aws_incident.query();

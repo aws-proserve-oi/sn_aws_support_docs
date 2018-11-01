@@ -32,14 +32,14 @@ gr = new GlideRecord('incident');
 gr.addQuery('sys_id', '965c9e5347c12200e0ef563dbb9a7156');
 gr.query();
 gr.next();
-var utils = new JournalUtils();
-utils.setJournalEntry(gr.comments,'testing the JournalUtils setJournalEntry function');
+var utils = new IncidentUtils();
+utils.setJournalEntry(gr.comments,'testing the IncidentUtils setJournalEntry function');
 gr.update();
 
 
 
 
-//var utils = new JournalUtils();
+//var utils = new IncidentUtils();
 gr = new GlideRecord('sys_history_line');
 gr.addQuery("label", "Additional comments");
 gr.setLimit(10);
