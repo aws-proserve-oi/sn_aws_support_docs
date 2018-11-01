@@ -46,7 +46,7 @@ IncidentUtils.prototype = {
     // sets the associated incident state and assignee.
     setIncidentState: function(aws_case) {
         var incident = aws_case.incident.getRefRecord();
-        switch(aws_case.status) {
+        switch(aws_case.status.getDisplayValue()) {
             case 'unassigned':
                 incident.state = 1;
                 break;
@@ -71,8 +71,8 @@ IncidentUtils.prototype = {
                 //hardocded as there is no resolution code advertised by AWS
                 incident.close_code = 'Resolved'; 
                 incident.close_notes = 'Resolved by AWS';
-                incident.resolved_by = aws_user_name;
-                incident.assigned_to = aws_user_name;
+                incident.resolved_by = this.aws_user_name;
+                incident.assigned_to = this.aws_user_name;
                 break;
             case 'reopened':
                 incident.state = 1;
@@ -133,6 +133,101 @@ IncidentUtils.prototype = {
         new_incident = this.setIncidentState(new_case);
         new_incident = this.setIncidentPriority(new_case);
         return new_incident;
+    },
+
+    getActiveCasesForAccount: function(aws_account) {
+        var caseIdList = [];
+        var aws_case = new GlideRecord('x_195647_aws__support_cases');
+        aws_case.addQuery('status','!=', 'closed');
+        aws_case.addQuery('aws_account','=', aws_account.sys_id);
+        // should optimize query
+        aws_case.query();
+        while (aws_case.next()) {
+            if (aws_case.case_id != '') {
+                caseIdList.push(String(aws_case.case_id));
+            }
+        }
+
+        var params = {
+            includeCommunications: true,
+            includeResolvedCases: true,
+            caseIdList: caseIdList
+        };
+        
+        if (caseIdList.length > 0) {
+            var AwsApi = new SupportApi({
+                accessKeyId: String(aws_account.aws_api_key),
+                secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
+            });
+            return AwsApi.listCases(params);
+        } 
+        return [];
+    },
+
+    updateCommunications: function(aws_case) {
+        var aws_account = aws_case.aws_account.getRefRecord();
+        // get last remote update sync.
+        last_comment_time = this.getLastCommentTimeByAwsUser(aws_case.incident);
+
+        var params = {
+            afterTime: last_comment_time,
+            caseId: String(aws_case.case_id)
+        };
+
+        //gs.info("Get comments for " + aws_case.case_id + " incident " + aws_case.incident.number + " since " + last_comment_time);
+        var AwsApi = new SupportApi({
+            accessKeyId: String(aws_account.aws_api_key),
+            secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
+        });
+        var comms = AwsApi.getCaseCommunications(params).slice(0).reverse();
+        //use this regexp to check the source of the comments the api provides.
+        var snow_user = new RegExp(aws_account.iam_username);
+        var incident = aws_case.incident.getRefRecord();
+        if (incident.isNewRecord()) {return;}
+        // update with a comment for each comment returned thats not created by user.
+        
+        for (var c = 0; c < comms.length; c++) {
+            //gs.info("COMM "+JSON.stringify(comms[c]));
+            var comm = comms[c];
+            if (comm.submittedBy.match(snow_user)) { continue; }
+            this.addAuthoredComment(incident,comm);
+        }
+        return incident;
+    },
+
+    getLastCommentTimeByAwsUser: function (incident_id) {
+        var timestamp;
+        var activity = new GlideRecord('sys_journal_field');
+        activity.addQuery('element_id','=', String(incident_id));
+        activity.addQuery('element','=', "comments");
+        activity.addQuery('sys_created_by','=', this.aws_user_name);
+        activity.orderByDesc('sys_created_on');
+        activity.setLimit(1);
+        activity.query();
+        if (activity.next()) {
+            timestamp = activity.sys_created_on;
+        } else {
+            timestamp = new GlideDateTime();
+            timestamp.setValue(0);
+        }
+        return String(timestamp).replace(" ", "T");
+    },
+
+    updateAwsCaseReference: function(aws_case_json) {
+        var aws_case = new GlideRecord('x_195647_aws__support_cases');
+        aws_case.addQuery('case_id', aws_case_json.caseId);
+        aws_case.query();
+        if (aws_case.hasNext()) {
+            aws_case.next();
+            if (aws_case.status != aws_case_json.status) {
+                aws_case.status = aws_case_json.status;
+                aws_case.update();
+            }
+            return aws_case;
+        } else {
+          return undefined;
+        }
+
     },
 
     type: 'IncidentUtils'

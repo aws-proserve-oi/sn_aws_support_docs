@@ -1,7 +1,6 @@
 gs.include('IncidentUtils');
 (function PollAwsCases(aws_account) {
     var utils = new IncidentUtils();
-    gs.info("Running PollAwsCases for account " + aws_account.name);
     var params = {
       includeCommunications: true,
       includeResolvedCases: false
