@@ -115,18 +115,16 @@ function updateCommunications(aws_incident, aws_account) {
         secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
     });
     var comms = AwsApi.getCaseCommunications(params).slice(0).reverse();
-    gs.info("GET Case comms from "+last_comment_time+' for '+aws_incident.case_id+' cases '+JSON.stringify(comms));
     //use this regexp to check the source of the comments the api provides.
     var snow_user = new RegExp(aws_account.iam_username);
     var incident = aws_incident.incident.getRefRecord();
-    var utils = new JournalUtils();
     if (incident.isNewRecord()) {return;}
     // update with a comment for each comment returned thats not created by user.
     
     for (var c = 0; c < comms.length; c++) {
-        gs.info("COMM "+JSON.stringify(comms[c]));
+        //gs.info("COMM "+JSON.stringify(comms[c]));
         var comm = comms[c];
-        if (comm.submittedBy.match(snow_user)) { return; }
+        if (comm.submittedBy.match(snow_user)) { continue; }
         if (comm.attachmentSet.length > 0) {
             for (var a = 0; a < comm.attachmentSet.length; a++) {
                 params = {
@@ -137,13 +135,8 @@ function updateCommunications(aws_incident, aws_account) {
                 sa.writeBase64( incident, String(attachment.fileName), 'text/plain', String(attachment.data));
             }
         }
-        //incident.autoSysFields(false);
-        var originalUser = utils.impersonate(aws_user);
-        utils.setJournalEntry(incident.comments, comm.body, comm.submittedBy);
-        
-        //incident.comments = comm.body;
-        incident.update();
-        utils.impersonate(originalUser);
+        var utils = new JournalUtils();
+        utils.addAuthoredComment(incident,comm);
     }
     return incident;
 }
