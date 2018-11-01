@@ -11,6 +11,10 @@ gs.include('IncidentUtils');
         if (aws_incident.next() && aws_incident.aws_account.active) {
             if (!utils.createdByAws(current)) {
                 var incident = aws_incident.incident.getRefRecord();
+                if (incident.state >=6 ) {
+                    incident.state = 1;
+                    incident.update();
+                }
                 var aws_account = aws_incident.aws_account.getRefRecord();
                 var creds = {
                     accessKeyId: String(aws_account.aws_api_key),
