@@ -30,8 +30,8 @@ function createAwsCase(incident, aws_account) {
         secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
     };
     var params = {
-      communicationBody: 'Integration Test Case - Please Ignore - ' + incident.description,
-      subject: 'Integration Test Case - Please Ignore - ' + '['+ incident.number +'] ' + incident.short_description,
+      communicationBody: 'TEST CASE--Please ignore - ' + incident.description,
+      subject: 'TEST CASE--Please ignore - ' + '['+ incident.number +'] ' + incident.short_description,
       categoryCode: String(incident.x_195647_aws__service_category),
       serviceCode: String(incident.x_195647_aws__service_code)
     };
