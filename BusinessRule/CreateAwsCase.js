@@ -1,4 +1,3 @@
-// condition: !utils.getCaseForIncident(current);
 /*gs.info(
     "Run CreateAwsCase BR - Incident Number: "+ current.number + "\n"
     "ServiceCode: "+ current.x_195647_aws_service_code +
@@ -12,6 +11,7 @@ gs.include('AwsSupportUtils');
     aws_account.query();
     if (aws_account.next() && aws_account.active) {
         var utils = new AwsSupportUtils(aws_account);
+        if (utils.getCaseForIncident(current)) {return;}
         var new_aws_case = utils.createAwsCase(current);
         /*gs.info(
             " New AWS Support case Id: "+ new_aws_support_case.case_id +

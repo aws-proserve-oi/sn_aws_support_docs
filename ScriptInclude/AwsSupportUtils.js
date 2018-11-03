@@ -5,7 +5,7 @@ var AwsSupportUtils = Class.create();
 AwsSupportUtils.prototype = {
     initialize: function(){
         this.AwsSupportUtils = new global.AwsSupportUtils();
-        var this.AwsSupportApi = new this.AwsSupportApi({
+        this.AwsSupportApi = new AwsSupportApi({
             accessKeyId: String(aws_account.aws_api_key),
             secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
         });
@@ -20,9 +20,6 @@ AwsSupportUtils.prototype = {
         this.StatusMap = JSON.parse(gs.getProperty("x_195647_aws_.Config.StatusMap"));
         this.SeverityCodeMap = JSON.parse(gs.getProperty("x_195647_aws_.Config.SeverityCodeMap"));
     },
-
-
-
     // receives an incident and a comment JSON from a Support Case,
     // Writes an authored comment in the incident journal.
     addAuthoredComment: function(incident, comm) {
@@ -57,21 +54,20 @@ AwsSupportUtils.prototype = {
             ]
         };
         
-        var attachmentResponse = this.AwsSupportApi.addAttachmentsToSet(params);
+        var attachmentSetId = this.AwsSupportApi.addAttachmentsToSet(params);
         var author = user.first_name + " "  +
                      user.last_name  + " <" + 
                      user.email      + ">";
         params = {
             caseId: String(aws_case.case_id),
             communicationBody: 'New attachment ' + attachment.file_name + ' added by ' + author,
-            attachmentSetId: attachmentResponse.attachmentSetId
+            attachmentSetId: attachmentSetId
         };
         var result = this.AwsSupportApi.addCaseCommunications(params);
     },
-    // 
-    addCaseCommunication: function(entry, aws_case) {
-        if (entry.element != 'comment') {return;}
-        var aws_case = new GlideRecord()
+    // receives an instance of sys_journal_entry
+    // returns an author line
+    generateAuthor: function(entry) {
         var user = new GlideRecord('sys_user');
         user.addQuery('user_name', entry.sys_created_by);
         user.query();
@@ -80,14 +76,22 @@ AwsSupportUtils.prototype = {
             var author = user.first_name + " "  +
                          user.last_name  + " <" + 
                          user.email      + ">";
-            var communicationBody = entry.value + '\n\n' + 'Submitted by ' + author;
-            var params = {
-                caseId: String(aws_case.case_id),
-                communicationBody: communicationBody
-            };
-            var result = this.AwsSupportApi.addCaseCommunications(params);
+            var author_line = 'Submitted by ' + author + '\nAt ' + entry.sys_created_on;
+            return author_line;
         }
-    }
+    },
+    //receives an instance of sys_journal_field and an aws case reference record.
+    //posts a new case comunication with the comment and user info.
+    addCaseCommunication: function(entry, aws_case) {
+        if (entry.element != 'comments') {return;}
+        var signature = this.generateAuthor(entry);
+        var communicationBody = entry.value + '\n\n' + signature;
+        var params = {
+            caseId: String(aws_case.case_id),
+            communicationBody: communicationBody
+        };
+        var result = this.AwsSupportApi.addCaseCommunications(params);
+    },
     // receives an instance of sys_journal_field 
     // returns true if the entry was added by AWS.
     createdByAws: function(entry) {
@@ -96,27 +100,6 @@ AwsSupportUtils.prototype = {
       }
       return false;
     },
-    //receives an instance of sys_journal_field and an aws case reference record.
-    //posts a new case comunication with the comment and user info.
-    addCaseCommunication: function(entry, aws_case) {
-        if (entry.element != 'comment') {return;}
-        var aws_case = new GlideRecord()
-        var user = new GlideRecord('sys_user');
-        user.addQuery('user_name', entry.sys_created_by);
-        user.query();
-        if (user.hasNext()) {
-            user.next();
-            var communicationBody = 
-                entry.value + '\n\n' + 'Submitted by ' +
-                user.first_name + " " + user.last_name + " <" + user.email + ">";
-            var params = {
-                caseId: String(aws_case.case_id),
-                communicationBody: communicationBody
-            };
-            var result = this.AwsSupportApi.addCaseCommunications(params);
-        }
-    }
-
     // receives a GlideRecord object from support_cases table
     // sets the associated incident state and assignee.
     setIncidentState: function(aws_case) {
@@ -156,19 +139,6 @@ AwsSupportUtils.prototype = {
         var case_record = new GlideRecord('x_195647_aws__support_cases');
         case_record.addQuery('case_id','=', aws_case_id);
         case_record.addQuery('status','!=', 'closed');
-        case_record.query();
-        if (case_record.hasNext()) {
-            return true;
-        } else {
-            return false;
-        }
-        return undefined;
-    },
-
-    caseIsOpen: function(aws_case_id) {
-        var case_record = new GlideRecord('x_195647_aws__support_cases');
-        case_record.addQuery('case_id','=', aws_case_id);
-        case_record.addQuery('status','NOT IN', 'resolved,closed');
         case_record.query();
         if (case_record.hasNext()) {
             return true;
@@ -218,9 +188,7 @@ AwsSupportUtils.prototype = {
                 aws_case.status = 'closed';
         }
         aws_case.update();
-        // resolve AWS clase
         var result = this.AwsSupportApi.resolveCase(caseId);
-
         return result;
     }
 
@@ -309,9 +277,10 @@ AwsSupportUtils.prototype = {
         }
     },
 
-    geteCaseForIncident: function(incident) {
+    getCaseForIncident: function(incident) {
         var aws_case = new GlideRecord('x_195647_aws__support_cases');
         aws_case.addQuery('incident','=', incident.sys_id);
+        aws_case.addQuery('status','!=', 'closed');
         aws_case.query();
         if (aws_case.hasNext()) {
             return aws_case.next();
@@ -331,8 +300,28 @@ AwsSupportUtils.prototype = {
         } else {
             prefix = 'TEST CASE--Please ignore - ['+ incident.number +'] '
         }
+
+        commBody = incident.description + '\n';
+        var comment = new GlideRecord('sys_journal_field');
+        comment.addQuery('element_id','=', String(incident.sys_id));
+        comment.addQuery('element','=', "comments");
+        comment.orderBy('sys_created_on');
+        comment.query();
+        if (comment.hasNext()) {
+            commBody += '\nThis case is being forwarded to AWS Support from an existing'
+            commBody += '\nIncident record, see the digest below for a reference of previous communications.'
+            commBody += '\nFeel free to request further details as needed.'
+            commBody += '\n\n###### Previous Communications digest: ######\n'
+        }        
+        while (comment.hasNext()) {
+            comment.next();
+
+            var signature = this.generateAuthor(comment);
+            commBody += comment.value + '\n' + signature;
+        }
+
         var params = {
-            communicationBody: incident.description,
+            communicationBody: commBody,
             subject: prefix + incident.short_description,
             categoryCode: String(incident.x_195647_aws__service_category),
             serviceCode: String(incident.x_195647_aws__service_code)

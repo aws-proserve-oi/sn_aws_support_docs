@@ -6,6 +6,7 @@ gs.include('AwsSupportUtils');
     aws_case.addQuery('incident','=', current.element_id);
     aws_case.query();
     if (aws_case.next() && aws_case.aws_account.active) {
+        var aws_account = aws_case.aws_account.getRefRecord();
         var utils = new AwsSupportUtils(aws_account);
         if (!utils.createdByAws(current)) {
             var incident = aws_case.incident.getRefRecord();
@@ -14,11 +15,7 @@ gs.include('AwsSupportUtils');
                 incident.state = this.AwsSupportUtils.StatusMap['opened']['IncidentState'];
                 incident.update();
             }
-            var aws_account = aws_case.aws_account.getRefRecord();
-            if (aws_account) {
-                var utils = new AwsSupportUtils(aws_account);
-                utils.addCaseCommunication(current, aws_case);
-            }            
+            utils.addCaseCommunication(current, aws_case);
         }
     }
 })(current, previous);

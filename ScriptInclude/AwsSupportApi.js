@@ -115,7 +115,7 @@ AwsSupportApi.prototype = {
         }*/
         var response = this._execute_request(params, 'AddAttachmentsToSet');
         if (response) {
-            return response;
+            return response.attachmentSetId;
         }
     },
 
@@ -168,7 +168,7 @@ AwsSupportApi.prototype = {
         //gs.info("PARAMS: "+JSON.stringify(opts.body));
         var response = request.execute();
         if (response.haveError()) {
-            gs.error("AWS request error." +
+            gs.error("AWS API request error." +
                 " Error Code: " + response.getErrorCode() +
                 " Message: " + response.getErrorMessage() +
                 " Status Code: "+ response.getStatusCode() +
