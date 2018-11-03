@@ -1,0 +1,33 @@
+{
+  "unassigned" : {
+    "IncidentState": 1,
+    "IncidentAssignee":"AWS"
+  },
+  "work-in-progress": {
+    "IncidentState": 2,
+    "IncidentAssignee":"AWS"
+  },
+  "pending-customer-action": {
+    "IncidentState": 2,
+    "IncidentAssignee":"NULL"
+  },
+  "customer-action-completed": {
+    "IncidentState": 2,
+    "IncidentAssignee":"AWS"
+  },
+  "opened": {
+    "IncidentState": 1,
+    "IncidentAssignee":"NULL"
+  },
+  "resolved": {
+    "IncidentState": 6,
+    "IncidentAssignee":"AWS"
+  },
+  "reopened": {
+    "IncidentState": 1,
+    "IncidentAssignee":"NULL"
+  },
+  "closed": {
+    "IncidentState": 7
+  }
+}

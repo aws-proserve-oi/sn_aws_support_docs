@@ -1,0 +1,7 @@
+{ 
+    "low"     : {"impact": 3, "urgency": 3, "priority": 5},
+    "normal"  : {"impact": 2, "urgency": 3, "priority": 4},
+    "high"    : {"impact": 2, "urgency": 2, "priority": 3},
+    "urgent"  : {"impact": 1, "urgency": 2, "priority": 2},
+    "critical": {"impact": 1, "urgency": 1, "priority": 1}
+}

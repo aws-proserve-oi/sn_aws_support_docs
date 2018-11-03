@@ -44,16 +44,16 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-  /* WEBPACK VAR INJECTION */(function(global) {var AWSSignUtil = __webpack_require__(1);
+  /* WEBPACK VAR INJECTION */(function(global) {var AwsSignUtil = __webpack_require__(1);
 
-  global.AWSSignUtil = AWSSignUtil;
+  global.AwsSignUtil = AwsSignUtil;
   /* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-  /* WEBPACK VAR INJECTION */(function(Buffer, process) {var AWSSignUtil = exports,
+  /* WEBPACK VAR INJECTION */(function(Buffer, process) {var AwsSignUtil = exports,
       url = __webpack_require__(7),
       querystring = __webpack_require__(14),
       crypto = __webpack_require__(17),
@@ -371,9 +371,9 @@
     return path + '?' + encodeRfc3986(querystring.stringify(query))
   }
 
-  AWSSignUtil.RequestSigner = RequestSigner
+  AwsSignUtil.RequestSigner = RequestSigner
 
-  AWSSignUtil.sign = function(request, credentials) {
+  AwsSignUtil.sign = function(request, credentials) {
     return new RequestSigner(request, credentials).sign()
   }
 

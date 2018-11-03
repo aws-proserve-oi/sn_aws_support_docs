@@ -1,7 +1,7 @@
 gs.include('SignUtil');
-var SupportApi = Class.create();
+var AwsSupportApi = Class.create();
 
-SupportApi.prototype = {
+AwsSupportApi.prototype = {
     
     initialize: function(creds) {
         this.creds    = creds;
@@ -145,7 +145,7 @@ SupportApi.prototype = {
 
     _execute_request: function(params, action) {
         var opts = {
-            service : 'support', // 'AWSSupport_20130415.',
+            service : 'support',
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-amz-json-1.1',
@@ -165,7 +165,7 @@ SupportApi.prototype = {
         request.setRequestHeader('X-Amz-Date', signature.headers['X-Amz-Date']);
         request.setRequestHeader('User-Agent', signature.headers['User-Agent']);
         request.setRequestBody(opts.body);
-        gs.info("PARAMS: "+JSON.stringify(opts.body));
+        //gs.info("PARAMS: "+JSON.stringify(opts.body));
         var response = request.execute();
         if (response.haveError()) {
             gs.error("AWS request error." +
@@ -173,7 +173,7 @@ SupportApi.prototype = {
                 " Message: " + response.getErrorMessage() +
                 " Status Code: "+ response.getStatusCode() +
                 " Response Body: "+ response.getBody());
-            return null;
+            throw response.getErrorCode;
         } else {
             return JSON.parse(response.getBody());
         }
@@ -187,5 +187,5 @@ SupportApi.prototype = {
     },
 
 
-    type: 'SupportApi'
+    type: 'AwsSupportApi'
 };

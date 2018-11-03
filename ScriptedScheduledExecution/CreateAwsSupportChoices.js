@@ -1,4 +1,4 @@
-gs.include('SupportApi');
+gs.include('AwsSupportApi');
 
 function insertChoice(choice, parent) {
     var choice = new GlideRecord('sys_choice');
@@ -36,7 +36,7 @@ function insertServiceChoices(service, parent) {
         secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
     };
 
-    AWSApi = new SupportApi(creds);
+    AWSApi = new AwsSupportApi(creds);
     var services = AWSApi.describeServices();
     gs.info("Services: " + JSON.stringify(services));
 

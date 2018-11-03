@@ -4,14 +4,14 @@
     //3 - Add user to group
     //4 - relate Group to account
 
-    gs.info("RUN - Auto account setup for " + current.name);
+    //gs.info("RUN - Auto account setup for " + current.name);
     var assignment_user = (function find_or_create_AWS_user() {
         if (gs.getProperty("x_195647_aws_.Config.AWS.username")) {
             var sys_user = new GlideRecord('sys_user');
             sys_user.addQuery('user_name','=', gs.getProperty("x_195647_aws_.Config.AWS.username"));
             sys_user.query();
             if (sys_user.next()) {
-                gs.info("Found existing AWS user id:" + sys_user.name);
+                //gs.info("Found existing AWS user: " + sys_user.name);
                 return sys_user;
             } else {
                 var new_user = new GlideRecord('sys_user');
@@ -21,11 +21,11 @@
                 new_user.internal_integration_user = true;
                 new_user.active = false;
                 new_user.insert();
-                gs.info("Created assignment user " + new_user.name );
+                //gs.info("Created assignment user " + new_user.name );
                 return new_user;
             }
         } else {
-            return false
+            return false;
         }
     })();
 
@@ -37,14 +37,14 @@
             group.addQuery('name','=', 'AWS-' + current.name);
             group.query();
             if (group.next()) {
-                gs.info("Found existing AWS assingment group for this account " + current.name);
+                //gs.info("Found existing AWS assingment group for this account " + current.name);
                 return group;
             } else {
                 var new_group = new GlideRecord('sys_user_group');
                 new_group.initialize();
                 new_group.name = 'AWS-' + current.name;
                 new_group.insert();
-                gs.info("Created assignment group " + new_group.name + " for AWS account: " + current.name );
+                //gs.info("Created assignment group " + new_group.name + " for AWS account: " + current.name );
                 return new_group;
             }
 
@@ -58,7 +58,7 @@
             grmember.addQuery('user','=', assignment_user.sys_id);
             grmember.query();
             if (grmember.next()) {
-                gs.info("User " + assignment_user.name + " already belongs to group " + current.assignment_group.name);
+                //gs.info("User " + assignment_user.name + " already belongs to group " + current.assignment_group.name);
                 return grmember;
             } else {
                 var new_grmember = new GlideRecord('sys_user_grmember');
@@ -66,7 +66,7 @@
                 new_grmember.user = assignment_user.sys_id;
                 new_grmember.group = current.assignment_group.sys_id;
                 new_grmember.insert();
-                gs.info("User " + assignment_user.name + " was added to group " + current.assignment_group.name);
+                //gs.info("User " + assignment_user.name + " was added to group " + current.assignment_group.name);
                 return new_grmember;
             }
         })();
