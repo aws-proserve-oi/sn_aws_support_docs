@@ -1,4 +1,4 @@
-# Support to Snow Incident overnight app. #
+# AWS Support to ServiceNow Incident connector app. #
 
 This repo contains the raw code for the scripts in the AwsSupport connector app for ServiceNow.
 
