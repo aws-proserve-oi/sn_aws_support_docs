@@ -155,7 +155,7 @@ AwsSupportApi.prototype = {
         };
         opts.headers['X-Amz-Target'] += action;
         opts.body = JSON.stringify(params);
-        var signature = AWSSignUtil.sign(opts, this.creds);
+        var signature = AwsSignUtil.sign(opts, this.creds);
         var request = new sn_ws.RESTMessageV2();
         request.setHttpMethod(opts.method);
         request.setEndpoint(this.endpoint);
@@ -165,7 +165,7 @@ AwsSupportApi.prototype = {
         request.setRequestHeader('X-Amz-Date', signature.headers['X-Amz-Date']);
         request.setRequestHeader('User-Agent', signature.headers['User-Agent']);
         request.setRequestBody(opts.body);
-        //gs.info("PARAMS: "+JSON.stringify(opts.body));
+        gs.info("AWS API REQ PARAMS: "+JSON.stringify(opts));
         var response = request.execute();
         if (response.haveError()) {
             gs.error("AWS API request error." +

@@ -3,7 +3,7 @@ gs.include('AwsSupportApi');
 gs.include('global.AwsSupportUtils');
 var AwsSupportUtils = Class.create();
 AwsSupportUtils.prototype = {
-    initialize: function(){
+    initialize: function(aws_account){
         this.AwsSupportUtils = new global.AwsSupportUtils();
         this.AwsSupportApi = new AwsSupportApi({
             accessKeyId: String(aws_account.aws_api_key),
@@ -147,28 +147,65 @@ AwsSupportUtils.prototype = {
         }
         return undefined;
     },
-
-    createIncidentRecord: function(aws_case) {
-        // To scale this this re-implement it with ScriptAction and events.
+    // receives an aws case reference record for a re-opened case for a closed incident.
+    // returns A digest of previous case communications with a reference to previous incidents.
+    generateCommDigest: function(aws_case) {
+        var previous_incidents = [];
+        var closed_cases = new GlideRecord('x_195647_aws__support_cases');
+        closed_cases.addQuery('status', 'closed');
+        closed_cases.query();
+        while (closed_cases.hasNext()) {
+            closed_cases.next();
+            var incident = closed_cases.incident.getRefRecord();
+            previous_incidents.push(incident.number);
+        }
+        var digest = '\n\nThis Case has been re-opened externally';
+        if (previous_incidents.length > 0) {
+            digest += '\nIt was previsouly hadled by case/s '+ previous_incidents.join(' ');
+        }
+        
+        var params = {
+            caseId: String(aws_case.case_id)
+        };
+        //gs.info("Get comments for " + aws_case.case_id + " incident " + aws_case.incident.number + " since " + last_comment_time);
+        var comms = this.AwsSupportApi.getCaseCommunications(params).slice(0).reverse();
+        if (comms.length > 0) {
+            digest += '\n\n###### Previous Communications digest ######';
+            for (var c in comms) {
+                digest += '\n---------------------------------------------';
+                digest += '---------------------------------------------\n';
+                digest += 'Submitted by ' + comms[c]["submittedBy"];
+                digest += ' at ' + comms[c]["timeCreated"];
+                digest += '\n' + comms[c]["body"];
+            }
+            return digest;
+        }
+    },
+    // receives a Support case JSON from the AWS API
+    // Creates the case reference record and the associated Incident.
+    createIncidentRecord: function(aws_case_json) {
         var new_case = new GlideRecord('x_195647_aws__support_cases');
         new_case.initialize();
-        new_case.case_id = aws_case.caseId;
+        new_case.case_id = aws_case_json.caseId;
         new_case.aws_account = this.aws_account.sys_id;
-        new_case.status = aws_case.status;
-        new_case.severity_code = aws_case.severityCode;
+        new_case.status = aws_case_json.status;
+        new_case.severity_code = aws_case_json.severityCode;
         new_case.insert();
-        gs.log('inserted case reference recrod: ' + new_case.case_id);
+        gs.info('inserted case reference recrod: ' + new_case.case_id);
         
         var new_incident = new GlideRecord('incident');
         new_incident.initialize(); 
-        new_incident.short_description = aws_case.subject;
-        new_incident.description = aws_case.recentCommunications.communications[0].body;
+        new_incident.short_description = aws_case_json.subject;
+        new_incident.description = aws_case_json.recentCommunications.communications[0].body;
+        if (aws_case_json.status == 'reopened') {
+            new_incident.description += this.generateCommDigest(new_case);
+        }
         new_incident.caller_id = this.aws_user.sys_id;
         new_incident.assignment_group = this.aws_account.assignment_group;
-        new_incident.x_195647_aws__service_category = aws_case.categoryCode;
-        new_incident.x_195647_aws__service_code = aws_case.serviceCode;
+        new_incident.x_195647_aws__service_category = aws_case_json.categoryCode;
+        new_incident.x_195647_aws__service_code = aws_case_json.serviceCode;
         new_incident.insert();
-        gs.log('inserted incident recrod: ' + new_incident.number);
+        gs.info('inserted incident recrod: ' + new_incident.number +" " + new_incident.caller_id);
         
         new_case.incident = new_incident.sys_id;
         new_case.update();
@@ -176,7 +213,8 @@ AwsSupportUtils.prototype = {
         new_incident = this.setIncidentPriority(new_case);
         return new_incident;
     },
-
+    // receives an aws case reference record
+    // resolves the Support case associated
     closeAwsCase: function(aws_case) {
         // update AWS Incidents table
         var incident = aws_case.incident.getRefRecord();
@@ -190,8 +228,8 @@ AwsSupportUtils.prototype = {
         aws_case.update();
         var result = this.AwsSupportApi.resolveCase(caseId);
         return result;
-    }
-
+    },
+    // returns a list of active AWS Support Case ids for the current account.
     getActiveCasesForAccount: function() {
         var caseIdList = [];
         var aws_case = new GlideRecord('x_195647_aws__support_cases');
@@ -261,13 +299,15 @@ AwsSupportUtils.prototype = {
         return String(timestamp).replace(" ", "T");
     },
 
-    updateAwsCaseReference: function(aws_case_json) {
+    updateCaseReference: function(aws_case_json) {
         var aws_case = new GlideRecord('x_195647_aws__support_cases');
         aws_case.addQuery('case_id', aws_case_json.caseId);
+        aws_case.addQuery('status','!=', 'closed');
         aws_case.query();
         if (aws_case.hasNext()) {
             aws_case.next();
             if (aws_case.status != aws_case_json.status) {
+                gs.info('estamos locos');
                 aws_case.status = aws_case_json.status;
                 aws_case.update();
             }
@@ -296,9 +336,9 @@ AwsSupportUtils.prototype = {
         }
         var prefix = '';
         if (this.aws_account.production) {
-            prefix = '['+ incident.number +'] '
+            prefix = '['+ incident.number +'] ';
         } else {
-            prefix = 'TEST CASE--Please ignore - ['+ incident.number +'] '
+            prefix = 'TEST CASE--Please ignore - ['+ incident.number +'] ';
         }
 
         commBody = incident.description + '\n';
@@ -308,10 +348,10 @@ AwsSupportUtils.prototype = {
         comment.orderBy('sys_created_on');
         comment.query();
         if (comment.hasNext()) {
-            commBody += '\nThis case is being forwarded to AWS Support from an existing'
-            commBody += '\nIncident record, see the digest below for a reference of previous communications.'
-            commBody += '\nFeel free to request further details as needed.'
-            commBody += '\n\n###### Previous Communications digest: ######\n'
+            commBody += '\nThis case is being forwarded to AWS Support from an existing';
+            commBody += '\nIncident record, see the digest below for a reference of previous communications.';
+            commBody += '\nFeel free to request further details as needed.';
+            commBody += '\n\n###### Previous Communications digest ######\n';
         }        
         while (comment.hasNext()) {
             comment.next();
@@ -322,15 +362,14 @@ AwsSupportUtils.prototype = {
 
         var params = {
             communicationBody: commBody,
-            subject: prefix + incident.short_description,
+            subject: String(prefix + incident.short_description),
             categoryCode: String(incident.x_195647_aws__service_category),
-            serviceCode: String(incident.x_195647_aws__service_code)
-            params.severityCode = this.getCaseSeverity(incident.priority);
+            serviceCode: String(incident.x_195647_aws__service_code),
+            severityCode: this.getCaseSeverity(incident.priority)
         };
         
         var aws_case_id = this.AwsSupportApi.createCase(params);
 
-        // insert in Support Cases table
         var new_aws_case = new GlideRecord('x_195647_aws__support_cases');
         new_aws_case.initialize();
         new_aws_case.case_id = aws_case_id;
@@ -338,6 +377,7 @@ AwsSupportUtils.prototype = {
         new_aws_case.incident = incident.sys_id;
         new_aws_case.insert();
         return new_aws_case;
-    }
+    },
+    
     type: 'AwsSupportUtils'
 };

@@ -4,13 +4,16 @@ gs.include('AwsSupportUtils');
     var aws_case = new GlideRecord('x_195647_aws__support_cases');
     aws_case.addQuery('incident','=', current.sys_id);
     aws_case.query();
-    
-    var utils = new AwsSupportUtils(aws_case.aws_account.getRefRecord());
-    var resolved = [];
-    for (var state in ['resolved', 'closed']) {
-      resolved.push([utils.StatusMap[state]['IncidentState']]);      
-    }
-    if (resolved.indexOf(current.incident_state) > -1) {
-        utils.closeAwsCase(aws_case);
+    if (aws_case.hasNext()) {
+        aws_case.next();
+        var utils = new AwsSupportUtils(aws_case.aws_account.getRefRecord());
+        var resolved = [];
+        var resolved_states = ['resolved', 'closed'];
+        for (var r in resolved_states) {
+          resolved.push([utils.StatusMap[resolved_states[r]]['IncidentState']]);
+        }
+        if (resolved.indexOf(current.incident_state) > -1) {
+            utils.closeAwsCase(aws_case);
+        }
     }
 })(current, previous);
