@@ -12,7 +12,7 @@ gs.include('AwsSupportUtils');
             if (incident.isNewRecord()) {continue;}
             //if the incident is closed, continue, this should never get this far with a closed incident
             //but as extra protection in case it does.
-            if (incident.state == utils.StatusMap['closed']['IncidentState']) {continue;}
+            if (incident.incident_state == utils.StatusMap['closed']['IncidentState']) {continue;}
             utils.setIncidentState(aws_case);
             utils.updateCommunications(aws_case, aws_account);
         }

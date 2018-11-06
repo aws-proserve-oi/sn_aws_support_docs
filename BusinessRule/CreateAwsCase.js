@@ -1,8 +1,8 @@
-/*gs.info(
-    "Run CreateAwsCase BR - Incident Number: "+ current.number + "\n"
-    "ServiceCode: "+ current.x_195647_aws_service_code +
-    " Category: " + current.x_195647_aws__service_category 
-);*/
+//gs.info(
+//    "Run CreateAwsCase BR - Incident Number: "+ current.number + "\n" +
+//    "ServiceCode: "+ current.x_195647_aws_service_code +
+//    " Category: " + current.x_195647_aws__service_category 
+//);
 gs.include('AwsSupportUtils');
 (function executeRule(current, previous) {
     var group = current.assignment_group.getRefRecord();

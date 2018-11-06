@@ -1,4 +1,4 @@
-//condition: (current.created_by != "admin") && (current.table_name == "incident")
+//condition: (current.created_by != "system") && (current.table_name == "incident")
 gs.include('AwsSupportApi');
 (function executeRule(current, previous) {
     var aws_case = new GlideRecord('x_195647_aws__support_cases');

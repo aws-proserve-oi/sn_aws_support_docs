@@ -11,8 +11,8 @@ gs.include('AwsSupportUtils');
         if (!utils.createdByAws(current)) {
             var incident = aws_case.incident.getRefRecord();
             // re-open resolved cases if a comment is added.
-            if (incident.state == this.AwsSupportUtils.StatusMap['resolved']['IncidentState'] ) {
-                incident.state = this.AwsSupportUtils.StatusMap['opened']['IncidentState'];
+            if (incident.state == utils.StatusMap['resolved']['IncidentState'] ) {
+                incident.state = utils.StatusMap['opened']['IncidentState'];
                 incident.update();
             }
             utils.addCaseCommunication(current, aws_case);

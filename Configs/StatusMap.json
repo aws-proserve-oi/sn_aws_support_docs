@@ -1,15 +1,15 @@
 {
   "unassigned" : {
     "IncidentState": 1,
-    "IncidentAssignee":"AWS"
+    "IncidentAssignee":"NULL"
   },
   "work-in-progress": {
     "IncidentState": 2,
     "IncidentAssignee":"AWS"
   },
   "pending-customer-action": {
-    "IncidentState": 2,
-    "IncidentAssignee":"NULL"
+    "IncidentState": 1,
+    "IncidentAssignee": "NULL"
   },
   "customer-action-completed": {
     "IncidentState": 2,

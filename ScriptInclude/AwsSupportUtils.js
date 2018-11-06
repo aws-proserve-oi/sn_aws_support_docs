@@ -14,7 +14,7 @@ AwsSupportUtils.prototype = {
         var user_record = new GlideRecord('sys_user');
         user_record.addQuery('user_name', this.aws_user_name);
         user_record.query();
-        if (!user_record.hasNext()) { throw "AWS Support user account is not setup. Configure one account with auto_setup enabled.";}
+        //if (!user_record.hasNext()) { throw "AWS Support user account is not setup. Configure one account with auto_setup enabled.";}
         user_record.next();
         this.aws_user = user_record;
         this.StatusMap = JSON.parse(gs.getProperty("x_195647_aws_.Config.StatusMap"));
@@ -24,18 +24,19 @@ AwsSupportUtils.prototype = {
     // Writes an authored comment in the incident journal.
     addAuthoredComment: function(incident, comm) {
       if (comm.attachmentSet.length > 0) {
-        this.addAttachments(incident, comm);
+        this.addAttachments(incident, comm.attachmentSet);
       }
       this.AwsSupportUtils.setJournalEntry(incident, comm.body, comm.submittedBy);
     },
     // writes an attachment for an incident.
     // receives an incident glide record and an AWS case attachment set.
     addAttachments: function(incident, attachmentSet) {
-      for (var a = 0; a < attachmentSet.length; a++) {
+      for (var a in attachmentSet) {
           params = {
-              attachmentId: String(attachmentSet[a].attachmentId)
+              attachmentId: attachmentSet[a].attachmentId
           };
           var attachment = this.AwsSupportApi.describeAttachment(params).attachment;
+          var sa = new GlideSysAttachment();
           sa.writeBase64( incident, String(attachment.fileName), 'text/plain', String(attachment.data));
       }
     },
@@ -55,12 +56,19 @@ AwsSupportUtils.prototype = {
         };
         
         var attachmentSetId = this.AwsSupportApi.addAttachmentsToSet(params);
-        var author = user.first_name + " "  +
-                     user.last_name  + " <" + 
-                     user.email      + ">";
+        var author = '';
+        var user = new GlideRecord('sys_user');
+        user.addQuery('user_name', attachment.sys_created_by);
+        user.query();
+        if (user.next()) {
+            author = ' added by ';
+            author += user.first_name + " "  +
+                      user.last_name  + " <" + 
+                      user.email      + ">";            
+        }
         params = {
             caseId: String(aws_case.case_id),
-            communicationBody: 'New attachment ' + attachment.file_name + ' added by ' + author,
+            communicationBody: 'New attachment ' + attachment.file_name + author,
             attachmentSetId: attachmentSetId
         };
         var result = this.AwsSupportApi.addCaseCommunications(params);
@@ -95,7 +103,8 @@ AwsSupportUtils.prototype = {
     // receives an instance of sys_journal_field 
     // returns true if the entry was added by AWS.
     createdByAws: function(entry) {
-      if (entry.sys_created_by == this.aws_user_name) {
+      if ((entry.sys_created_by == this.aws_user_name) || 
+          (entry.sys_created_by == 'system')) {
         return true;
       }
       return false;
@@ -104,20 +113,21 @@ AwsSupportUtils.prototype = {
     // sets the associated incident state and assignee.
     setIncidentState: function(aws_case) {
         var incident = aws_case.incident.getRefRecord();
-        incident.incident_state = this.StatusMap[aws_case.status]["IncidentState"];
+        incident.state = Number(this.StatusMap[aws_case.status]["IncidentState"]);
         if (this.StatusMap[aws_case.status]["IncidentAssignee"]) {
             if (this.StatusMap[aws_case.status]["IncidentAssignee"] == 'AWS') {
                 incident.assigned_to = this.aws_user_name;
             } else {
-                incident.assigned_to = this.StatusMap[aws_case.status]["IncidentAssignee"];
+                incident.assigned_to = "";
             }            
         }
-        if (this.StatusMap[aws_case.status]["IncidentState"] == this.StatusMap['resolved']["IncidentState"]) {
+        if (incident.state == this.StatusMap['resolved']["IncidentState"]) {
             incident.close_code = 'Resolved'; 
             incident.close_notes = 'Resolved remotely.';
             incident.resolved_by = this.aws_user_name;
         }
-        incident.update();
+        var result = incident.update();
+        //gs.info("UPDATE ERROR " + incident.getLastErrorMessage());
         return incident;
     },
 
@@ -181,6 +191,19 @@ AwsSupportUtils.prototype = {
             return digest;
         }
     },
+    getFirstCaseCommunication: function(aws_case_json) {
+        var comms = [];
+        if (aws_case_json.recentCommunications.communications.length >= 5) {
+            var params = {
+                "caseId": aws_case_json.caseId, 
+                "beforeTime": aws_case_json.timeCreated
+            };
+            comms = this.AwsSupportApi.getCaseCommunications(params);
+        } else {
+            comms = aws_case_json.recentCommunications.communications;
+        }
+        return comms.reverse()[0].body;
+    },
     // receives a Support case JSON from the AWS API
     // Creates the case reference record and the associated Incident.
     createIncidentRecord: function(aws_case_json) {
@@ -191,12 +214,12 @@ AwsSupportUtils.prototype = {
         new_case.status = aws_case_json.status;
         new_case.severity_code = aws_case_json.severityCode;
         new_case.insert();
-        gs.info('inserted case reference recrod: ' + new_case.case_id);
+        //gs.info('inserted case reference recrod: ' + new_case.case_id);
         
         var new_incident = new GlideRecord('incident');
         new_incident.initialize(); 
         new_incident.short_description = aws_case_json.subject;
-        new_incident.description = aws_case_json.recentCommunications.communications[0].body;
+        new_incident.description = this.getFirstCaseCommunication(aws_case_json);
         if (aws_case_json.status == 'reopened') {
             new_incident.description += this.generateCommDigest(new_case);
         }
@@ -205,7 +228,7 @@ AwsSupportUtils.prototype = {
         new_incident.x_195647_aws__service_category = aws_case_json.categoryCode;
         new_incident.x_195647_aws__service_code = aws_case_json.serviceCode;
         new_incident.insert();
-        gs.info('inserted incident recrod: ' + new_incident.number +" " + new_incident.caller_id);
+        //gs.info('inserted incident recrod: ' + new_incident.number +" " + new_incident.caller_id);
         
         new_case.incident = new_incident.sys_id;
         new_case.update();
@@ -218,15 +241,15 @@ AwsSupportUtils.prototype = {
     closeAwsCase: function(aws_case) {
         // update AWS Incidents table
         var incident = aws_case.incident.getRefRecord();
-        switch(incident.incident_state) {
-            case this.StatusMap['resolved']['IncidentState']:
+        switch(Number(incident.state)) {
+            case Number(this.StatusMap['resolved']['IncidentState']):
                 aws_case.status = 'resolved';
                 break;
-            case this.StatusMap['closed']['IncidentState']:
+            case Number(this.StatusMap['closed']['IncidentState']):
                 aws_case.status = 'closed';
         }
         aws_case.update();
-        var result = this.AwsSupportApi.resolveCase(caseId);
+        var result = this.AwsSupportApi.resolveCase(aws_case.case_id);
         return result;
     },
     // returns a list of active AWS Support Case ids for the current account.
@@ -307,7 +330,6 @@ AwsSupportUtils.prototype = {
         if (aws_case.hasNext()) {
             aws_case.next();
             if (aws_case.status != aws_case_json.status) {
-                gs.info('estamos locos');
                 aws_case.status = aws_case_json.status;
                 aws_case.update();
             }
