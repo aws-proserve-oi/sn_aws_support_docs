@@ -1,23 +1,5 @@
 # AWS Support to ServiceNow Incident connector app #
 
-**[AWS Internal Only]**
-
-This repo contains the raw code for the scripts in the AwsSupport connector app for ServiceNow.
-
-**TODO**: develop automation to deploy the code from this repo into a SNOW instance.
-
-Currently I code in this package then migrate manually to ServiceNow Studio. Folder name indicates file type, other attributes such as Business Rule properties or Scheduled Executions frequency are stored in the [ServiceNow app repo(https://github.com/fborgnia/aws_support_snow_incident)
-
-The generated application for ServiceNow is available in its [github repo](https://github.com/fborgnia/aws_support_snow_incident).
-
-This app integrates Service Now Incidents with AWS Support Cases for multiple AWS Accounts based on assignment groups.
-
-The integration provides Outbound & Inbound case creation, bidirectional comments, attachment, status and priority synchronizations.
-
-One ServiceNow incident can be assigned to an AWS account at any time, an AWS case will be created and associated with the incident, the two will keep synchronized until the ServiceNow Incident is permanently closed.
-
-Status and Priorities are mapped in configuration properties and can be adjusted to any Incident Status & Priority design.
-
 ## Installation & Configuration ##
 
 The AWS account must be subscribed to a Support product code, Internal (Isengard) accounts are not subscribed by default, 
