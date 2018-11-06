@@ -1,29 +1,41 @@
-gs.include('AwsSupportApi');
+gs.include("AwsSupportApi");
 
-function insertChoice(choice, parent) {
-    var choice = new GlideRecord('sys_choice');
-    choice.initialize(); 
-    choice.short_description = aws_case.subject;
-    choice.description = aws_case.recentCommunications.communications[0].body;
-    choice.caller_id = aws_account.assignment_user;
-    choice.insert();
-    
-    return choice;    
+function insertServiceChoices(service) {
+    gs.info("SERVICE " + JSON.stringify(service));
+    var service_choice = insertChoice(service, "x_195647_aws__service_code");
+    for (var c in service["categories"]) {
+        var category_choice = insertChoice(service["categories"][c], "x_195647_aws__service_category", service["code"]);
+    }
 }
 
-function insertServiceChoices(service, parent) {
-    var choices = []
-    var 
-    for 
-
-    return choices;
+function insertChoice(object, element, dependent_value) {
+    var choice = new GlideRecord("sys_choice");
+    choice.addQuery("element", element);
+    if (dependent_value) {
+        choice.addQuery("dependent_value", dependent_value);
+    }
+    choice.addQuery("value", object["code"]);
+    choice.query();
+    if (choice.hasNext()) {
+        choice.next();
+    } else {
+        choice.initialize();
+    }
+    choice.inactive= false;
+    choice.value   = object["code"];
+    choice.label   = object["name"];
+    choice.element = element;
+    choice.name   = 'incident';
+    if (dependent_value) {
+        choice.dependent_value = dependent_value;
+    }
+    choice.update();
+    gs.info('inserted choice ' + choice.sys_id + ' ' + choice.value + " " + choice.dependent_value);
 }
 
 (function() {
-    var aws_account = new GlideRecord('x_195647_aws__accounts');
-    aws_account.addQuery('active', 'true');
-    //aws_account.addQuery('aws_api_key','!=', '');
-    //aws_account.addQuery('secret_access_key','!=', '');
+    var aws_account = new GlideRecord("x_195647_aws__accounts");
+    aws_account.addQuery("active", "true");
     aws_account.query();
     if (!aws_account.hasNext()) { 
         gs.error("Error importing AWS Support Codes, one AWS account must be configured & active");
@@ -38,31 +50,33 @@ function insertServiceChoices(service, parent) {
 
     AWSApi = new AwsSupportApi(creds);
     var services = AWSApi.describeServices();
-    gs.info("Services: " + JSON.stringify(services));
+    //gs.info("Services: " + JSON.stringify(services));
 
-    //create main category choice: AWS Support Case
-
-    var choice = {
-        label: "AWS Support Case",
-        value: "aws_support_case",
-        element: "category",
-        language: "en",
-        inactive: false,
-        sequence: 90
-    };
-    var incident_category = insertChoice(choice);
+    /*{
+        "code": "comprehend", 
+        "name": "Comprehend", 
+        "categories": [
+            {
+                "code": "other", 
+                "name": "Other"
+            }, 
+            {
+                "code": "feature-request", 
+                "name": "Feature Request"
+            }, 
+            {
+                "code": "api", 
+                "name": "API"
+            }, 
+            {
+                "code": "general-guidance", 
+                "name": "General Guidance"
+            }
+        ]
+    },*/ 
 
     for (var s in services) {
-        var choices = insertServiceChoices(services[s], incident_category);
+        insertServiceChoices(services[s]);
         gs.info("Added Service: " + services[s].name);
     }
-
-
-    // iterate first AWS account
-    // Get AWS Support Codes & Categories
-    // Iterate per code
-        // Create service code
-        // iterate service's categories
-            // create category choices
-
 })();

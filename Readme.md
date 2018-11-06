@@ -1,4 +1,6 @@
-# AWS Support to ServiceNow Incident connector app. #
+# AWS Support to ServiceNow Incident connector app #
+
+**[AWS Internal Only]**
 
 This repo contains the raw code for the scripts in the AwsSupport connector app for ServiceNow.
 
@@ -17,6 +19,12 @@ One ServiceNow incident can be assigned to an AWS account at any time, an AWS ca
 Status and Priorities are mapped in configuration properties and can be adjusted to any Incident Status & Priority design.
 
 ## Installation & Configuration ##
+
+The AWS account must be subscribed to a Support product code, Internal (Isengard) accounts are not subscribed by default, 
+Wiki page:
+https://w.amazon.com/index.php/AWS_Developer_Support/EnterpriseSupportContracts
+TT quick link:
+https://portal.ant.amazon.com/sites/aws_cs/escforms/TT_Kiosk/TT_Kiosk.aspx?TT_ID=156
 
 ### 1 - Create IAM User ###
 
@@ -64,6 +72,7 @@ Status and Priorities are mapped in configuration properties and can be adjusted
 | sys_user_group    | All Application scopes  | can: read, create, update |
 | sys_journal_field | All Application scopes  | can: read                 |
 | incident          | All Application scopes  | can: read, create, update |
+| sys_choice        | All Application scopes  | can: read, create, update |
 
 ### 3 - Create Global AwsSupportUtils ###
 
@@ -125,6 +134,19 @@ AwsSupportUtils.prototype = {
     Active: checked (true).
     Assignment Group: blank.
     Automatically configure Group: checked (true).
+
+### 6 - Import AWS Service Codes ###
+
+1 - Login to ServiceNow with the Admin privileges.
+
+2 - Navigate to System Definition -> Scheduled Jobs
+
+3 - Find by Name: "CreateAWSSupportChoices"
+
+4 - Click Execute Now on the right top corner
+
+5 - Wait approximately 10 minutes for all service codes to be populated in the Incident form.
+
 
 ## Usage ##
 
