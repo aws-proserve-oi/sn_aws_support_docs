@@ -1,8 +1,10 @@
-# Support to Snow Incident overnight app. #
+# AWS Support to ServiceNow Incident connector app. #
 
-This repo contains the code for the scripts in the AwsSupport connector app for ServiceNow.
-TODO: develop automation to deploy the code from this repo into a SNOW instance.
-Currently I code in this package then migrate manually to ServiceNow using Studio. Folder name indicates file type and file name indicates file name.
+This repo contains the raw code for the scripts in the AwsSupport connector app for ServiceNow.
+
+**TODO**: develop automation to deploy the code from this repo into a SNOW instance.
+
+Currently I code in this package then migrate manually to ServiceNow Studio. Folder name indicates file type, other attributes such as Business Rule properties or Scheduled Executions frequency are stored in the [ServiceNow app repo(https://github.com/fborgnia/aws_support_snow_incident)
 
 The generated application for ServiceNow is available in its [github repo](https://github.com/fborgnia/aws_support_snow_incident).
 
