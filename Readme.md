@@ -90,6 +90,18 @@ AwsSupportUtils.prototype = {
 };
 ```
 
+5 - Return to System Definitions -> Script Includes
+
+6 - Create New:
+    Set the application scope to global if the scope Application field is AwsSupport.
+    (settings icon on the right top corner, developer section)
+
+    Name: AwsSupportUtils
+    API Name: global.AwsSupportUtils
+    Accessible from: All application scopes
+    Active: Checked (true)
+    Script: (from step 4.)
+
 ### 4 - Grant Application Permissions ###
 
 1 - Login to ServiceNow with admin privileges.
