@@ -2,11 +2,6 @@
 
 ## Installation & Configuration ##
 
-The AWS account must be subscribed to a Support product code, Internal (Isengard) accounts are not subscribed by default, 
-Wiki page:
-https://w.amazon.com/index.php/AWS_Developer_Support/EnterpriseSupportContracts
-TT quick link:
-https://portal.ant.amazon.com/sites/aws_cs/escforms/TT_Kiosk/TT_Kiosk.aspx?TT_ID=156
 
 ### 1 - Create IAM User ###
 
