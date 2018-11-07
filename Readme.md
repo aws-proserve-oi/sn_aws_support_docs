@@ -98,6 +98,7 @@ AwsSupportUtils.prototype = {
 
     Name: AwsSupportUtils
     API Name: global.AwsSupportUtils
+    Application: global
     Accessible from: All application scopes
     Active: Checked (true)
     Script: (from step 4.)
