@@ -29,7 +29,7 @@
 
 3 - Select Import From Source Control.
 
-    URL: https://github.com/fborgnia/aws_support_snow_incident.git
+    URL: https://github.com/fborgnia/sn_aws_support_connector.git
     Username: a github account or blank.
     Password: a github password or blank.
 
