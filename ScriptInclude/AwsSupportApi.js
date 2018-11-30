@@ -1,4 +1,4 @@
-gs.include('SignUtil');
+gs.include('AwsSignUtil');
 var AwsSupportApi = Class.create();
 
 AwsSupportApi.prototype = {
@@ -8,7 +8,7 @@ AwsSupportApi.prototype = {
         this.endpoint = 'https://support.us-east-1.amazonaws.com/';
     },
 
-    listCases: function(params) {
+    describeCases: function(params) {
         /*{
             "caseIdList": [
                 ""
@@ -35,7 +35,7 @@ AwsSupportApi.prototype = {
         }
     },
 
-    getCaseCommunications: function(params) {
+    describeCommunications: function(params) {
         /*{
             "caseId": "", 
             "beforeTime": "", 
@@ -49,7 +49,7 @@ AwsSupportApi.prototype = {
         }
     },
 
-    addCaseCommunications: function(params) {
+    addCommunicationsToCase: function(params) {
         /*{
             "caseId": "", 
             "communicationBody": "", 
@@ -165,7 +165,7 @@ AwsSupportApi.prototype = {
         request.setRequestHeader('X-Amz-Date', signature.headers['X-Amz-Date']);
         request.setRequestHeader('User-Agent', signature.headers['User-Agent']);
         request.setRequestBody(opts.body);
-        gs.info("AWS API REQ PARAMS: "+JSON.stringify(opts));
+        //gs.info("AWS API REQ PARAMS: "+JSON.stringify(opts));
         var response = request.execute();
         if (response.haveError()) {
             gs.error("AWS API request error." +
