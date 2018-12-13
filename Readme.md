@@ -1,7 +1,8 @@
-# AWS Support to ServiceNow Incident connector app #
+# AWS Support Center to ServiceNow Incident connector app #
+
+This repository is is for code documentation only, the app is available [here](https://github.com/fborgnia/sn_aws_support_connector)
 
 ## Installation & Configuration ##
-
 
 ### 1 - Create IAM User ###
 
