@@ -1,10 +1,14 @@
 // Helper functions to interact with AWS Cases and Incident records.
 gs.include('AwsSupportApi');
-gs.include('global.AwsSupportUtils');
 var AwsSupportUtils = Class.create();
 AwsSupportUtils.prototype = {
     initialize: function(aws_account){
-        this.AwsSupportUtils = new global.AwsSupportUtils();
+        gs.include('global.AwsSupportUtils');
+        if (global.AwsSupportUtils) {
+            this.global_utils = new global.AwsSupportUtils();
+        } else {
+            this.global_utils = this;
+        }
         this.AwsSupportApi = new AwsSupportApi({
             accessKeyId: String(aws_account.aws_api_key),
             secretAccessKey: aws_account.aws_secret_key.getDecryptedValue()
@@ -19,9 +23,11 @@ AwsSupportUtils.prototype = {
         this.StatusMap = JSON.parse(gs.getProperty(gs.getCurrentScopeName()+".Config.StatusMap"));
         this.SeverityCodeMap = JSON.parse(gs.getProperty(gs.getCurrentScopeName()+".Config.SeverityCodeMap"));
     },
-    //calculates next update time for an Incident;
-    nextUpdateAt: function(incident) {
-
+    // default function to add entries to inident comments.
+    setJournalEntry: function(incident, body, user){
+        body += "\nsubmitted by " + user;
+        incident.comments = body;
+        incident.update();
     },
     // receives an incident and a comment JSON from a Support Case,
     // Writes an authored comment in the incident journal.
@@ -29,7 +35,7 @@ AwsSupportUtils.prototype = {
       if (comm.attachmentSet.length > 0) {
         this.addAttachments(incident, comm.attachmentSet);
       }
-      this.AwsSupportUtils.setJournalEntry(incident, comm.body, comm.submittedBy);
+      this.global_utils.setJournalEntry(incident, comm.body, comm.submittedBy);
     },
     // writes an attachment for an incident.
     // receives an incident glide record and an AWS case attachment set.
@@ -106,11 +112,11 @@ AwsSupportUtils.prototype = {
     // receives an instance of sys_journal_field 
     // returns true if the entry was added by AWS.
     createdByAws: function(entry) {
-      if ((entry.sys_created_by == this.aws_user_name) || 
-          (entry.sys_created_by == 'system')) {
-        return true;
-      }
-      return false;
+        if ((entry.sys_created_by == this.aws_user_name) || 
+           (entry.sys_created_by == 'system')) {
+            return true;
+        }
+        return false;
     },
     // receives a GlideRecord object from support_cases table
     // sets the associated incident state and assignee.
@@ -290,7 +296,7 @@ AwsSupportUtils.prototype = {
         var activity = new GlideRecord('sys_journal_field');
         activity.addQuery('element_id','=', String(incident_id));
         activity.addQuery('element','=', "comments");
-        activity.addQuery('sys_created_by','=', this.aws_user_name);
+        activity.addQuery('sys_created_by='+ this.aws_user_name +'^ORsys_created_by=system');
         activity.orderByDesc('sys_created_on');
         activity.setLimit(1);
         activity.query();
@@ -359,14 +365,12 @@ AwsSupportUtils.prototype = {
 
     updateIncidentCase: function(case_ref) {
         var incident = case_ref.incident.getRefRecord();
-        //if the incident is new, continue: prevents race condition.
+        //if the incident is new, continue: prevents any race condition.
         if (incident.isNewRecord()) {return;}
         //if the incident is closed, continue, this should never get this far with a closed incident
         //but as extra protection in case it does.
         if (incident.incident_state == this.StatusMap['closed']['IncidentState']) {return;}
-        //Update incident state from config map
         this.setIncidentState(case_ref);
-        //Update communications
         this.updateCommunications(case_ref);
     },
 

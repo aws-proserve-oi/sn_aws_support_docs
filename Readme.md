@@ -43,13 +43,13 @@
 
 3 - Set the permissions for the tables below:
 
-| Table             | Accessible from         | Access                    |
-| ----------------- |:-----------------------:| -------------------------:|
-| sys_user          | All Application scopes  | can: read, create, update |
-| sys_user_group    | All Application scopes  | can: read, create, update |
-| sys_journal_field | All Application scopes  | can: read                 |
-| incident          | All Application scopes  | can: read, create, update |
-| sys_choice        | All Application scopes  | can: read, create, update |
+| Table             | Accessible from         | Access                    | Reason                  |
+| ----------------- |:-----------------------:| :------------------------:|------------------------:|
+| sys_user          | All Application scopes  | can: read, create, update | Create assignment user  |
+| sys_user_group    | All Application scopes  | can: read, create, update | Create assignment grup  |
+| sys_journal_field | All Application scopes  | can: read                 | Read Incident comments  |
+| incident          | All Application scopes  | can: read, create, update | Create/Update Incidents |
+| sys_choice        | All Application scopes  | can: read, create, update | Create Support Codes    |
 
 ### 3 - Create Global AwsSupportUtils ###
 
