@@ -9,7 +9,7 @@
   },
   "pending-customer-action": {
     "IncidentState": 1,
-    "IncidentAssignee": "NULL"
+    "IncidentAssignee": "CALLER"
   },
   "customer-action-completed": {
     "IncidentState": 2,
@@ -17,7 +17,7 @@
   },
   "opened": {
     "IncidentState": 1,
-    "IncidentAssignee":"NULL"
+    "IncidentAssignee": "CALLER"
   },
   "resolved": {
     "IncidentState": 6,
@@ -25,7 +25,7 @@
   },
   "reopened": {
     "IncidentState": 1,
-    "IncidentAssignee":"NULL"
+    "IncidentAssignee": "CALLER"
   },
   "closed": {
     "IncidentState": 7

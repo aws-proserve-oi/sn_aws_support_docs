@@ -162,4 +162,134 @@ To contact AWS Support from a Service Now Incidents create an Incident case, Com
 
 ### More usage doc in the future, work in progress ###
 
+## Supported Use Cases ##
 
+### 0 - Create AWS Accounts ###
+
+Provides access from ServiceNow to the AWS Support API for the accounts configured & relates accounts to assignment groups to manage Incident assignments.
+
+1 - Login with 'x_195647_aws_.Support Admin' privileges.
+
+2 - Navigate to ServiceNow AwsSupport -> Accounts.
+
+3 - Click New, complete the form and submit.
+
+    Account Name: A name for this account, IE: MegaCorp-MegaApp-Dev
+    AWS API Key: Api Key Id from the AWS account crendentials.
+    AWS Secret Key: Secret Api Key from the AWS account crendentials.
+    IAM UserName: User Name for the credential pair.
+    Active: checked (true).
+    Assignment Group: blank.
+    Automatically configure Group: checked (true).
+
+### 1 - Assign an Incident to AWS Support ###
+
+To assign an Incident to AWS Support, Complete AWS Support Codes section and assign the case to the Assignment Group for the AWS configured account.
+
+1 - Login into ServiceNow with itsm permissions
+2 - Create New Incident
+
+    Complete required values: Caller, Short Description, Description.
+    Assignment group: IE: AWS-MegaCorp-MegaApp-Dev
+    AWS Support Codes:
+      ServiceCode: Amazon Machine Learning
+      Category: Job Flow Issue
+
+3 - Verify Case is created in AWS
+  
+    a - Login into AWS Account
+    b - Navigate to Support -> Support Center
+    c - Confirm case is created with test title.
+
+
+### 2 - Receive an Incident from AWS Support ###
+
+When a Case is created in the account, either by AWS or by a third party, ServiceNow will automatically create an Incident case associated, and assigned to the corresponding AWS account assignment group.
+
+1 - Login into AWS with support:* permissions
+2 - Create new Support Case
+
+    Complete required values: Subject, Body, Priority & categories.
+    Create Case.
+
+3 - Verify Incident is created in ServiceNow
+  
+    1 - Login into ServiceNow with itsm permissions
+    b - Navigate to Incidents & verify Incident exists with:
+        caller: Aws
+        short_description
+        description
+        assignment_group
+        status (as configured in StatusMap)
+        priority/impact/urgency (as configured in SeverityCodeMap)
+        communications
+        attachments
+
+### 3 - Send communications to an AWS Support Case ###
+
+1 - Add a comment (Customer Visible) in the Incident activity journal
+
+3 - Verify Comment is added in the AWS Support Case
+  
+### 3 - Receive communications from an AWS Support Case ###
+
+1 - Add a communication to the AWS Support Case
+2 - Verify the communication is added as a customer visible note.
+
+### 4 - Send attachments to an AWS Support Case ###
+
+1 - Add an attachment to the ServiceNow Incident.
+2 - Verify the attachment is present in the AWS Support Case.
+
+### 4 - Receive attachments from an AWS Support Case ###
+
+1 - Add an attachment in the AWS Support Case.
+2 - Verify the attachment is present the associated ServiceNow Incident.
+
+### 5 - Resolve an AWS Case by resolving the Incident ###
+
+1 - Configure the system property file with the configuration mapping.
+
+IncidentState represents the number value for the state in ServiceNow. 1 being pending and 7 closed in the default configuration.
+IncidentAssignee can be either NULL|AWS or not present at all, if NULL the value is set to blank, AWS sets it to the AWS user in ServiceNow and if the configuration key is not present there will be no modifications made to the field.
+
+    [snip]
+    {
+      "unassigned" : {
+        "IncidentState": 1,
+        "IncidentAssignee":"NULL"
+      },
+      .
+      .
+      .
+      "closed": {
+        "IncidentState": 7
+      }
+    }
+
+2 - Resolve the Incident in ServiceNow.
+
+3 - Verify the AWS Case is now Closed.
+
+### 6 - AWS resolves an integrated Case ###
+
+1 - Configure the system property file (see above)
+
+2 - Close the AWS Case
+
+3 - Verify the ServiceNow Incident is set to Resolved, by aws as configured.
+
+### 7 - Re-open a Case ###
+
+1 - Add a communication to either end and verify
+    
+    Incident will be Pending
+    Aws Support Case will be open with the new communication.
+
+### 7 - Close an Incident permanently in ServiceNow ###
+
+Once the Incident is set to the "closed" state mapped in the configuration file, it will not be further modified externally.
+If the AWS Support case is opened externaly it will create a new Incident in ServiceNow.
+
+1 - Set the Incident to the "closed" state in the mapping
+2 - Verify updates to the case create a new Incident record.
